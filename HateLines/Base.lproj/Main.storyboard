@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -13,12 +13,19 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HateLines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="iVF-Jr-KHy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hate  Lines" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="52" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-ap-53A">
+                                <rect key="frame" x="297.5" y="187" width="173" height="211"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-BookIt" family="Bodoni 72 Oldstyle" pointSize="85"/>
+                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIl-BJ-1Ci">
                                 <rect key="frame" x="1002" y="762" width="225" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -29,7 +36,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6dF-5D-ezI">
-                                <rect key="frame" x="64.666666666666686" y="374" width="285" height="148"/>
+                                <rect key="frame" x="241.5" y="438" width="285" height="148"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P51-gs-Wu7">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="69"/>
@@ -45,24 +52,17 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hate  Lines" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="52" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-ap-53A">
-                                <rect key="frame" x="102" y="53" width="229" height="281"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-BookIt" family="Bodoni 72 Oldstyle" pointSize="103"/>
-                                <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6dF-5D-ezI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G5f-1l-jJl"/>
-                            <constraint firstItem="Yt2-ap-53A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GiS-IP-kfb"/>
                             <constraint firstItem="iVF-Jr-KHy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Yx4-lg-2e3"/>
                             <constraint firstAttribute="bottom" secondItem="iVF-Jr-KHy" secondAttribute="bottom" id="gcW-Uo-DYG"/>
                             <constraint firstItem="iVF-Jr-KHy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pJP-am-zVW"/>
                             <constraint firstItem="6dF-5D-ezI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pnb-gl-bZ5"/>
+                            <constraint firstItem="6dF-5D-ezI" firstAttribute="top" secondItem="Yt2-ap-53A" secondAttribute="bottom" constant="40" id="uWy-Np-iX2"/>
                             <constraint firstAttribute="trailing" secondItem="iVF-Jr-KHy" secondAttribute="trailing" id="uhp-lO-4nT"/>
-                            <constraint firstItem="6dF-5D-ezI" firstAttribute="top" secondItem="Yt2-ap-53A" secondAttribute="bottom" constant="40" id="vob-ie-swB"/>
+                            <constraint firstItem="Yt2-ap-53A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zSI-Ce-kgP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -99,17 +99,17 @@
             <objects>
                 <viewController id="lPw-bo-DdE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxz-kU-V7E">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-l9-m3C">
-                                <rect key="frame" x="39" y="180.66666666666663" width="133" height="153.33333333333337"/>
+                                <rect key="frame" x="39" y="136" width="487" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="SLD-m3-9wv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number 1 Hated in /@location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoI-Ko-KLO">
-                                <rect key="frame" x="47" y="115" width="214" height="64"/>
+                                <rect key="frame" x="47" y="71" width="568" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Ipp-5I-aeK"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu5-qW-jdc">
-                                <rect key="frame" x="47" y="333" width="144" height="43"/>
+                                <rect key="frame" x="47" y="333" width="498" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="YrS-DO-Ivr"/>
                                 </constraints>
@@ -127,7 +127,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-OF-Q2c">
-                                <rect key="frame" x="150" y="398.66666666666669" width="146" height="49"/>
+                                <rect key="frame" x="504" y="398.5" width="146" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="aOt-Uk-5tr"/>
                                 </constraints>
@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eJ4-4t-Lv2">
-                                <rect key="frame" x="304" y="396" width="45" height="49.666666666666686"/>
+                                <rect key="frame" x="658" y="351.5" width="45" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="jZq-5l-iGw"/>
                                     <constraint firstAttribute="height" constant="50.5" id="nft-5n-nqv"/>
@@ -146,22 +146,22 @@
                                 <rect key="frame" x="74" y="399.5" width="68" height="48"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CVb-cn-GZ3">
-                                <rect key="frame" x="24" y="399.66666666666669" width="24.666666666666671" height="18"/>
+                                <rect key="frame" x="24" y="355.5" width="24.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27.5" id="39e-dr-ESW"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bu5-cM-9NQ">
-                                <rect key="frame" x="24" y="438" width="28.666666666666671" height="20.666666666666686"/>
+                                <rect key="frame" x="24" y="393.5" width="28.5" height="98"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-hx-ZsC">
-                                <rect key="frame" x="20" y="409.66666666666669" width="28.666666666666671" height="21.333333333333314"/>
+                                <rect key="frame" x="20" y="365.5" width="28.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNI-Gu-OKm">
-                                <rect key="frame" x="150" y="474.66666666666669" width="146" height="49.000000000000057"/>
+                                <rect key="frame" x="504" y="474.5" width="146" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="Odk-IP-o5B"/>
                                 </constraints>
@@ -170,32 +170,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="krC-wh-I0f">
-                                <rect key="frame" x="304" y="472" width="45" height="50"/>
+                                <rect key="frame" x="658" y="427.5" width="45" height="127.5"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eSb-XQ-hR2">
-                                <rect key="frame" x="74" y="475.33333333333337" width="68" height="48.333333333333371"/>
+                                <rect key="frame" x="74" y="474.5" width="422" height="49"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vDI-cL-Kjy">
-                                <rect key="frame" x="28" y="475.66666666666669" width="24.666666666666671" height="18"/>
+                                <rect key="frame" x="28" y="508.5" width="24.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27.5" id="cZg-mM-Gsf"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pgA-IK-Mf8">
-                                <rect key="frame" x="28" y="514" width="28.666666666666671" height="20.666666666666629"/>
+                                <rect key="frame" x="28" y="546.5" width="28.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="28.5" id="Aix-MM-8UW"/>
                                     <constraint firstAttribute="height" constant="30.5" id="bln-ka-3EX"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44H-OA-Om5">
-                                <rect key="frame" x="24" y="485.66666666666669" width="28.666666666666671" height="20.333333333333314"/>
+                                <rect key="frame" x="24" y="518.5" width="28.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hiv-kr-EpI">
-                                <rect key="frame" x="162" y="564" width="146" height="49"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hiv-kr-EpI">
+                                <rect key="frame" x="515" y="564" width="146" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="ZyR-wV-qhw"/>
                                 </constraints>
@@ -203,8 +203,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-Zm-9Og">
-                                <rect key="frame" x="316" y="561" width="45" height="51"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Alf-Zm-9Og">
+                                <rect key="frame" x="669" y="593.5" width="46" height="19.5"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tIs-CW-kzR">
                                 <rect key="frame" x="86" y="561" width="40" height="52"/>
@@ -213,49 +213,49 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7hh-Ni-MfR">
-                                <rect key="frame" x="28" y="564.66666666666663" width="24.666666666666671" height="18"/>
+                                <rect key="frame" x="28" y="597.5" width="24.5" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27.5" id="Gpg-D6-nxA"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uHV-2z-LQo">
-                                <rect key="frame" x="28" y="603" width="28.666666666666671" height="20.666666666666629"/>
+                                <rect key="frame" x="28" y="635.5" width="28.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30.5" id="cmS-s2-T0e"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ar-nB-S7R">
-                                <rect key="frame" x="24" y="574.66666666666663" width="28.666666666666671" height="20.333333333333371"/>
+                                <rect key="frame" x="24" y="607.5" width="28.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qQS-dt-BTr">
-                                <rect key="frame" x="28" y="649.33333333333326" width="24.666666666666671" height="10.333333333333371"/>
+                                <rect key="frame" x="28" y="682" width="24.5" height="10.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="3rx-4K-ECY"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uUt-Cz-Cg9">
-                                <rect key="frame" x="28" y="687" width="28.666666666666671" height="20.666666666666629"/>
+                                <rect key="frame" x="28" y="719.5" width="28.5" height="149"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feJ-9R-twK">
-                                <rect key="frame" x="24" y="658.66666666666663" width="28.666666666666671" height="38"/>
+                                <rect key="frame" x="24" y="691.5" width="28.5" height="166"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TC-ev-hmI">
-                                <rect key="frame" x="150" y="652.66666666666663" width="146" height="50"/>
+                                <rect key="frame" x="504" y="685.5" width="146" height="178"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-WT-ntM">
-                                <rect key="frame" x="304" y="650.5" width="45" height="51"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="questionmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NsX-WT-ntM">
+                                <rect key="frame" x="658" y="651.5" width="45" height="211"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A5B-oI-vjU">
-                                <rect key="frame" x="74" y="654.33333333333326" width="68" height="47.333333333333371"/>
+                                <rect key="frame" x="74" y="686.5" width="422" height="176"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -360,7 +360,7 @@
             <objects>
                 <viewController id="pcl-Hk-ewd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aOw-hU-seA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="v0W-w3-G87">
@@ -523,7 +523,7 @@
             <objects>
                 <viewController id="vbu-Sf-a3C" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kVb-b4-eGT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yqX-m8-mNJ">
@@ -565,71 +565,183 @@
             <objects>
                 <viewController id="fJF-Xf-9or" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EtJ-9Z-cNy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jack Man" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atB-Tm-8XC">
-                                <rect key="frame" x="96" y="191" width="171" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6uO-W3-nMb">
-                                <rect key="frame" x="20" y="192" width="68" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Younhee Lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu9-QL-0cQ">
-                                <rect key="frame" x="96" y="267" width="171" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LzM-OR-nCB">
-                                <rect key="frame" x="20" y="268" width="68" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ivan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-Cj-j7x">
-                                <rect key="frame" x="96" y="335" width="171" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="maA-K4-P5i">
-                                <rect key="frame" x="20" y="336" width="68" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Momo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thf-Nd-TM3">
-                                <rect key="frame" x="96" y="397" width="171" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aSx-Eo-dwM">
-                                <rect key="frame" x="20" y="398" width="68" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekk-OA-7Qc">
-                                <rect key="frame" x="0.0" y="103" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" prompt="See how your favourite person is doing!" placeholder="Search By First or Lastname!" translatesAutoresizingMaskIntoConstraints="NO" id="Ekk-OA-7Qc">
+                                <rect key="frame" x="0.0" y="15" width="768" height="90"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9tt-9F-1db">
+                                <rect key="frame" x="243" y="262" width="282" height="500"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ZZT-Dx-ciS">
+                                        <rect key="frame" x="0.0" y="0.0" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="Dkq-IE-y6z">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nB2-6d-jyG">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pLV-Bx-uQg">
+                                        <rect key="frame" x="0.0" y="50" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="nng-fO-BdA">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLi-5d-XJX">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ywZ-KK-9M9">
+                                        <rect key="frame" x="0.0" y="100" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="v5g-l8-anz">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnF-ki-XYy">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HrN-Ev-Yv4">
+                                        <rect key="frame" x="0.0" y="150" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="otX-uC-18M">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-VD-IQB">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="DeA-6c-I1X">
+                                        <rect key="frame" x="0.0" y="200" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-52-NrZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNv-qY-vQm">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="r6q-xY-0pc">
+                                        <rect key="frame" x="0.0" y="250" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="MeT-6P-g0h">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7d-SO-ghz">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PTn-SE-Unn">
+                                        <rect key="frame" x="0.0" y="300" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="030-I6-TzI">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdO-Nq-0bv">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="NTD-CO-ikW">
+                                        <rect key="frame" x="0.0" y="350" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-Zh-OPI">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbz-W7-cLs">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="4l1-2h-I8b">
+                                        <rect key="frame" x="0.0" y="400" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-Ke-fBY">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EE-Mo-UMu">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AOx-3w-Ccm">
+                                        <rect key="frame" x="0.0" y="450" width="282" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="naruto" translatesAutoresizingMaskIntoConstraints="NO" id="sUa-C4-ECE">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Momo Fatmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hP2-cb-9Se">
+                                                <rect key="frame" x="57" y="0.0" width="225" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9tt-9F-1db" firstAttribute="centerY" secondItem="EtJ-9Z-cNy" secondAttribute="centerY" id="LTE-on-zRX"/>
+                            <constraint firstItem="Ekk-OA-7Qc" firstAttribute="top" secondItem="JzC-Yb-zhu" secondAttribute="top" constant="15" id="TXH-79-AOo"/>
+                            <constraint firstItem="9tt-9F-1db" firstAttribute="centerX" secondItem="EtJ-9Z-cNy" secondAttribute="centerX" id="pv7-oo-TmJ"/>
+                            <constraint firstItem="Ekk-OA-7Qc" firstAttribute="trailing" secondItem="JzC-Yb-zhu" secondAttribute="trailing" id="sLy-fy-S8k"/>
+                            <constraint firstItem="Ekk-OA-7Qc" firstAttribute="leading" secondItem="JzC-Yb-zhu" secondAttribute="leading" id="wV7-7s-8yb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JzC-Yb-zhu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="qIA-4k-tMl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CS7-7n-eVw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="408"/>
+            <point key="canvasLocation" x="1734.7826086956522" y="407.8125"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="1768" height="2650.666748046875"/>
+        <image name="Background" width="1750" height="2624"/>
         <image name="Email" width="285" height="69"/>
         <image name="Google" width="285" height="69"/>
         <image name="camera" catalog="system" width="64" height="48"/>
@@ -638,6 +750,7 @@
         <image name="chevron.up" catalog="system" width="64" height="34"/>
         <image name="globe" catalog="system" width="64" height="62"/>
         <image name="magnifyingglass" catalog="system" width="64" height="60"/>
+        <image name="naruto" width="50" height="50"/>
         <image name="person.circle" catalog="system" width="64" height="62"/>
         <image name="person.crop.square" catalog="system" width="64" height="56"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
