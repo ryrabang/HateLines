@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" restorationIdentifier="postCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" rowHeight="50" id="6oE-U3-3Vs" userLabel="Post Cell" customClass="PostCell" customModule="HateLines" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6oE-U3-3Vs" id="J3W-2r-Oo9">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xx-d1-3NX" userLabel="Cell Content">
+                        <rect key="frame" x="10" y="10" width="394" height="70"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ec0-zq-GHt" userLabel="Post Stack">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="op7-7I-WKC" userLabel="Votes Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwn-V5-zVL" userLabel="Up Vote">
+                                                <rect key="frame" x="0.0" y="0.0" width="56.5" height="23.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" image="arrow-up">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtI-QC-MD3" userLabel="votes number">
+                                                <rect key="frame" x="0.0" y="23.5" width="56.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDY-Tb-tIb" userLabel="Down Vote">
+                                                <rect key="frame" x="0.0" y="46.5" width="56.5" height="23.5"/>
+                                                <state key="normal" image="arrow-down"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-profile" translatesAutoresizingMaskIntoConstraints="NO" id="nM8-ka-4B8" userLabel="Poster Portrait">
+                                        <rect key="frame" x="60.5" y="0.0" width="84" height="70"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rd0-CM-9ka" userLabel="Post Title">
+                                        <rect key="frame" x="148.5" y="0.0" width="245.5" height="70"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="op7-7I-WKC" firstAttribute="width" secondItem="ec0-zq-GHt" secondAttribute="width" multiplier="1:7" id="Ckj-NY-Bpu"/>
+                                    <constraint firstItem="nM8-ka-4B8" firstAttribute="width" secondItem="ec0-zq-GHt" secondAttribute="width" multiplier="3:14" id="pBU-w3-V3F"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ec0-zq-GHt" firstAttribute="top" secondItem="1xx-d1-3NX" secondAttribute="top" id="8f9-45-swd"/>
+                            <constraint firstAttribute="bottom" secondItem="ec0-zq-GHt" secondAttribute="bottom" id="dQ6-18-yjG"/>
+                            <constraint firstItem="ec0-zq-GHt" firstAttribute="leading" secondItem="1xx-d1-3NX" secondAttribute="leading" id="dcr-MJ-z5b"/>
+                            <constraint firstAttribute="trailing" secondItem="ec0-zq-GHt" secondAttribute="trailing" id="z1X-FI-sPZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1xx-d1-3NX" firstAttribute="leading" secondItem="J3W-2r-Oo9" secondAttribute="leading" constant="10" id="7on-DI-lFY"/>
+                    <constraint firstAttribute="bottom" secondItem="1xx-d1-3NX" secondAttribute="bottom" constant="10" id="IvY-zn-0hw"/>
+                    <constraint firstItem="1xx-d1-3NX" firstAttribute="top" secondItem="J3W-2r-Oo9" secondAttribute="top" constant="10" id="ann-rV-vQl"/>
+                    <constraint firstAttribute="trailing" secondItem="1xx-d1-3NX" secondAttribute="trailing" constant="10" id="rGA-G2-cMR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="24.637681159420293" y="-23.4375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow-down" width="18" height="18"/>
+        <image name="arrow-up" width="18" height="18"/>
+        <image name="avatar-profile" width="225" height="225"/>
+    </resources>
+</document>
