@@ -22,6 +22,12 @@ class PostsTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = 70
     }
     
+    init(withData data: [Post]){
+       
+        posts = data
+       
+    }
+    
     //MARK: - Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("get rows")
@@ -50,6 +56,5 @@ class PostsTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
         }
         return [reportAction]
     }
-    
-    
+       
 }
