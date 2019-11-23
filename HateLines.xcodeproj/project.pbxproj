@@ -12,6 +12,7 @@
 		25C7ED8A23751FCF0032F94B /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25C7ED8823751FCF0032F94B /* PostCell.xib */; };
 		25C7ED8C237529AB0032F94B /* PostsTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7ED8B237529AB0032F94B /* PostsTableManager.swift */; };
 		25C7ED8E23752A090032F94B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7ED8D23752A090032F94B /* Post.swift */; };
+		25E6BE912389D82C004DD157 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E6BE902389D82C004DD157 /* GoogleService-Info.plist */; };
 		762048422350515F0027C949 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048412350515F0027C949 /* CameraViewController.swift */; };
 		BE703573233EB7A70020EC40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE703572233EB7A70020EC40 /* AppDelegate.swift */; };
 		BE703575233EB7A70020EC40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE703574233EB7A70020EC40 /* SceneDelegate.swift */; };
@@ -19,14 +20,19 @@
 		BE70357A233EB7A70020EC40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE703578233EB7A70020EC40 /* Main.storyboard */; };
 		BE70357C233EB7A80020EC40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE70357B233EB7A80020EC40 /* Assets.xcassets */; };
 		BE70357F233EB7A80020EC40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE70357D233EB7A80020EC40 /* LaunchScreen.storyboard */; };
+		D4C61A435963DE84D8110A4E /* Pods_HateLines.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41526349EC42370824665847 /* Pods_HateLines.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EB2D9039A31E63916DEB0C7 /* Pods-HateLines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HateLines.release.xcconfig"; path = "Target Support Files/Pods-HateLines/Pods-HateLines.release.xcconfig"; sourceTree = "<group>"; };
 		25C7ED8323750B260032F94B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		25C7ED8723751FCF0032F94B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		25C7ED8823751FCF0032F94B /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		25C7ED8B237529AB0032F94B /* PostsTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableManager.swift; sourceTree = "<group>"; };
 		25C7ED8D23752A090032F94B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		25E6BE902389D82C004DD157 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		41526349EC42370824665847 /* Pods_HateLines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HateLines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50ADA1CDBC22E64F6D48E0BF /* Pods-HateLines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HateLines.debug.xcconfig"; path = "Target Support Files/Pods-HateLines/Pods-HateLines.debug.xcconfig"; sourceTree = "<group>"; };
 		762048412350515F0027C949 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		BE70356F233EB7A70020EC40 /* HateLines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HateLines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE703572233EB7A70020EC40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C61A435963DE84D8110A4E /* Pods_HateLines.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,11 +73,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3B6DBC2540459930CAA4565F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50ADA1CDBC22E64F6D48E0BF /* Pods-HateLines.debug.xcconfig */,
+				1EB2D9039A31E63916DEB0C7 /* Pods-HateLines.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7958471B820598593CC095D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41526349EC42370824665847 /* Pods_HateLines.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BE703566233EB7A70020EC40 = {
 			isa = PBXGroup;
 			children = (
 				BE703571233EB7A70020EC40 /* HateLines */,
 				BE703570233EB7A70020EC40 /* Products */,
+				3B6DBC2540459930CAA4565F /* Pods */,
+				7958471B820598593CC095D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +124,7 @@
 				BE70357D233EB7A80020EC40 /* LaunchScreen.storyboard */,
 				BE703580233EB7A80020EC40 /* Info.plist */,
 				25C7ED8B237529AB0032F94B /* PostsTableManager.swift */,
+				25E6BE902389D82C004DD157 /* GoogleService-Info.plist */,
 			);
 			path = HateLines;
 			sourceTree = "<group>";
@@ -108,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE703583233EB7A80020EC40 /* Build configuration list for PBXNativeTarget "HateLines" */;
 			buildPhases = (
+				38CE2F2446AE5282466512BD /* [CP] Check Pods Manifest.lock */,
 				BE70356B233EB7A70020EC40 /* Sources */,
 				BE70356C233EB7A70020EC40 /* Frameworks */,
 				BE70356D233EB7A70020EC40 /* Resources */,
+				4098943F7630475D4304C11A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,12 +191,55 @@
 			files = (
 				BE70357F233EB7A80020EC40 /* LaunchScreen.storyboard in Resources */,
 				BE70357C233EB7A80020EC40 /* Assets.xcassets in Resources */,
+				25E6BE912389D82C004DD157 /* GoogleService-Info.plist in Resources */,
 				BE70357A233EB7A70020EC40 /* Main.storyboard in Resources */,
 				25C7ED8A23751FCF0032F94B /* PostCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38CE2F2446AE5282466512BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HateLines-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4098943F7630475D4304C11A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HateLines/Pods-HateLines-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HateLines/Pods-HateLines-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HateLines/Pods-HateLines-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE70356B233EB7A70020EC40 /* Sources */ = {
@@ -322,6 +395,7 @@
 		};
 		BE703584233EB7A80020EC40 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50ADA1CDBC22E64F6D48E0BF /* Pods-HateLines.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -341,6 +415,7 @@
 		};
 		BE703585233EB7A80020EC40 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EB2D9039A31E63916DEB0C7 /* Pods-HateLines.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

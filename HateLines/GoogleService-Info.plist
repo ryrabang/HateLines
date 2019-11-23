@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>756639770520-2ceqglgqulkhtv60pvdvpl1ujihtl7mm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.756639770520-2ceqglgqulkhtv60pvdvpl1ujihtl7mm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAR2hcHWCzOBfZUlzp6Wb9rA_GZr_Yu2aQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>756639770520</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ca.bcit.comp4977.HateLines</string>
+	<key>PROJECT_ID</key>
+	<string>hatelines-23b7c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hatelines-23b7c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:756639770520:ios:10391b6ddd5c7839332ded</string>
+	<key>DATABASE_URL</key>
+	<string>https://hatelines-23b7c.firebaseio.com</string>
+</dict>
+</plist>
