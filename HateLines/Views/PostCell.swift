@@ -36,33 +36,34 @@ class PostCell: UITableViewCell {
             if (sender == upVote) {
                 currentScore += 1
                 upOrDown = "up"
+                sender.setImage(UIImage(named: "arrow-up-red"), for: .normal)
             } else {
                 currentScore -= 1
                 upOrDown = "down"
+                sender.setImage(UIImage(named: "arrow-down-red"), for: .normal)
             }
-            sender.tintColor = .red
         } else {
             if (upOrDown == "up") {
                 if (sender == upVote) {
                     currentScore -= 1
                     upOrDown = ""
-                    sender.tintColor = .black
+                    sender.setImage(UIImage(named: "arrow-up"), for: .normal)
                 } else {
                     currentScore -= 2
                     upOrDown = "down"
-                    upVote.tintColor = .black
-                    sender.tintColor = .red
+                    upVote.setImage(UIImage(named: "arrow-up"), for: .normal)
+                    sender.setImage(UIImage(named: "arrow-down-red"), for: .normal)
                 }
             } else {
                 if (sender == downVote) {
                     currentScore += 1
                     upOrDown = ""
-                    sender.tintColor = .black
+                    sender.setImage(UIImage(named: "arrow-down"), for: .normal)
                 } else {
                     currentScore += 2
                     upOrDown = "up"
-                    downVote.tintColor = .black
-                    sender.tintColor = .red
+                    downVote.setImage(UIImage(named: "arrow-down"), for: .normal)
+                    sender.setImage(UIImage(named: "arrow-up-red"), for: .normal)
                 }
             }
         }
