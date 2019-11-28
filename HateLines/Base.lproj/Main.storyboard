@@ -94,301 +94,62 @@
             </objects>
             <point key="canvasLocation" x="-2581" y="889"/>
         </scene>
-        <!--View Controller-->
+        <!--Global View Controller-->
         <scene sceneID="mMS-eE-VFC">
             <objects>
-                <viewController id="lPw-bo-DdE" sceneMemberID="viewController">
+                <viewController id="lPw-bo-DdE" customClass="GlobalViewController" customModule="HateLines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxz-kU-V7E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-l9-m3C">
-                                <rect key="frame" x="39" y="181" width="133" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number 1 Hated in /@location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoI-Ko-KLO">
+                                <rect key="frame" x="40" y="104" width="334" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-l9-m3C">
+                                <rect key="frame" x="40" y="149.66666666666663" width="175" height="223.00000000000003"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number 1 Hated in /@location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoI-Ko-KLO">
-                                <rect key="frame" x="47" y="115" width="309" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu5-qW-jdc">
-                                <rect key="frame" x="75" y="333" width="116" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="YrS-DO-Ivr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" id="zZq-Z2-DJN">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" id="zZq-Z2-DJN" userLabel="Top Comment Stack">
                                 <rect key="frame" x="14" y="394" width="380" height="325"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="44" id="Cag-k0-z87">
-                                        <rect key="frame" x="0.0" y="0.0" width="380" height="59"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-ra-nqC">
-                                                <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="58.666666666666664"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4d-2l-Ynj">
-                                                        <rect key="frame" x="0.0" y="4.666666666666667" width="25.666666666666668" height="10.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Up" backgroundImage="chevron.up" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-hx-ZsC">
-                                                        <rect key="frame" x="0.0" y="20.333333333333332" width="25.666666666666668" height="17.999999999999996"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzl-z7-q2U">
-                                                        <rect key="frame" x="0.0" y="43.666666666666671" width="25.666666666666668" height="10.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Down" backgroundImage="chevron.down" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3lI-bA-NTQ">
-                                                <rect key="frame" x="69.666666666666671" y="3.9999999999999929" width="56.666666666666671" height="51.333333333333343"/>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="49"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-OF-Q2c">
-                                                <rect key="frame" x="170.33333333333334" y="0.0" width="146.00000000000003" height="58.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHl-As-MwJ">
-                                                <rect key="frame" x="360.33333333333331" y="0.99999999999999645" width="19.666666666666686" height="57.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                <state key="normal" title="Question" backgroundImage="questionmark.circle.fill" catalog="system">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="44" id="Nzc-Zr-w7x">
-                                        <rect key="frame" x="0.0" y="67" width="380" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-Y4-4X4">
-                                                <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="58.666666666666664"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o66-KP-UO3">
-                                                        <rect key="frame" x="0.0" y="4.666666666666667" width="25.666666666666668" height="10.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Up" backgroundImage="chevron.up" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDQ-HN-tyH">
-                                                        <rect key="frame" x="0.0" y="20.333333333333329" width="25.666666666666668" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyO-xM-5Eh">
-                                                        <rect key="frame" x="0.0" y="43.666666666666657" width="25.666666666666668" height="10.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Down" backgroundImage="chevron.down" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hwQ-Ui-AJG">
-                                                <rect key="frame" x="69.666666666666671" y="3.9999999999999929" width="56.666666666666671" height="51.333333333333343"/>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="49"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcR-dd-MPV">
-                                                <rect key="frame" x="170.33333333333334" y="0.0" width="146.00000000000003" height="58.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaV-dn-cwp">
-                                                <rect key="frame" x="360.33333333333331" y="0.99999999999999645" width="19.666666666666686" height="57.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                <state key="normal" title="Question" backgroundImage="questionmark.circle.fill" catalog="system">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="44" id="HE2-kY-6n2">
-                                        <rect key="frame" x="0.0" y="133" width="380" height="59"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j1a-6N-7Fr">
-                                                <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="58.666666666666664"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IV-KN-4Je">
-                                                        <rect key="frame" x="0.0" y="4.666666666666667" width="25.666666666666668" height="10.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Up" backgroundImage="chevron.up" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHd-Xf-oVt">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="25.666666666666668" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHI-vE-25S">
-                                                        <rect key="frame" x="0.0" y="43.666666666666643" width="25.666666666666668" height="10.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Down" backgroundImage="chevron.down" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fua-k2-xre">
-                                                <rect key="frame" x="69.666666666666671" y="3.9999999999999929" width="56.666666666666671" height="51.333333333333343"/>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="49"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Den-LZ-2xq">
-                                                <rect key="frame" x="170.33333333333334" y="0.0" width="146.00000000000003" height="58.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfS-IZ-H9K">
-                                                <rect key="frame" x="360.33333333333331" y="0.99999999999999645" width="19.666666666666686" height="57.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                <state key="normal" title="Question" backgroundImage="questionmark.circle.fill" catalog="system">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="44" id="YQU-5c-hvD">
-                                        <rect key="frame" x="0.0" y="200" width="380" height="59"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ldv-oE-vC0">
-                                                <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="58.666666666666664"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiI-33-Q3P">
-                                                        <rect key="frame" x="0.0" y="4.666666666666667" width="25.666666666666668" height="10.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Up" backgroundImage="chevron.up" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1y-Ab-1nv">
-                                                        <rect key="frame" x="0.0" y="20.333333333333343" width="25.666666666666668" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-rt-3hz">
-                                                        <rect key="frame" x="0.0" y="43.666666666666671" width="25.666666666666668" height="10.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Down" backgroundImage="chevron.down" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VZ8-sp-TLy">
-                                                <rect key="frame" x="69.666666666666671" y="3.9999999999999929" width="56.666666666666671" height="51.333333333333343"/>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="49"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkD-Am-X7w">
-                                                <rect key="frame" x="170.33333333333334" y="0.0" width="146.00000000000003" height="58.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trp-nF-7ly">
-                                                <rect key="frame" x="360.33333333333331" y="0.99999999999999645" width="19.666666666666686" height="57.333333333333329"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                <state key="normal" title="Question" backgroundImage="questionmark.circle.fill" catalog="system">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="44" id="4vb-qH-6Mv">
-                                        <rect key="frame" x="0.0" y="267" width="380" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nF9-1r-CVg">
-                                                <rect key="frame" x="0.0" y="0.0" width="25.666666666666668" height="58.333333333333336"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDd-hF-BiJ">
-                                                        <rect key="frame" x="0.0" y="4.666666666666667" width="25.666666666666668" height="10.333333333333336"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Up" backgroundImage="chevron.up" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-Gc-3Pu">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="25.666666666666668" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEF-cZ-9Vm">
-                                                        <rect key="frame" x="0.0" y="43.666666666666643" width="25.666666666666668" height="10"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                        <state key="normal" title="Down" backgroundImage="chevron.down" catalog="system">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="person.crop.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xUK-71-K06">
-                                                <rect key="frame" x="69.666666666666671" y="3.9999999999999929" width="56.666666666666671" height="51.000000000000014"/>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="49"/>
-                                            </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This guy is so ugly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSd-hA-jrF">
-                                                <rect key="frame" x="170.33333333333334" y="0.0" width="146.00000000000003" height="58.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpy-ez-8d0">
-                                                <rect key="frame" x="360.33333333333331" y="0.99999999999999645" width="19.666666666666686" height="57"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                <state key="normal" title="Question" backgroundImage="questionmark.circle.fill" catalog="system">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu5-qW-jdc">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="25.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iPY-Bq-k8c" userLabel="Comment Table">
+                                        <rect key="frame" x="0.0" y="35.333333333333343" width="380" height="289.66666666666663"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zZq-Z2-DJN" firstAttribute="top" secondItem="KVc-bI-xmV" secondAttribute="top" constant="350" id="1Id-Pi-ufp"/>
-                            <constraint firstItem="zZq-Z2-DJN" firstAttribute="top" secondItem="Qu5-qW-jdc" secondAttribute="bottom" constant="18" id="4Oy-JF-jVf"/>
-                            <constraint firstItem="KVc-bI-xmV" firstAttribute="bottom" secondItem="zZq-Z2-DJN" secondAttribute="bottom" constant="93.670000000000002" id="Auh-nN-KrI"/>
-                            <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="zZq-Z2-DJN" secondAttribute="trailing" constant="20" id="WXx-Zq-mms"/>
-                            <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="Qu5-qW-jdc" secondAttribute="trailing" constant="223" id="XOj-3J-KBU"/>
-                            <constraint firstItem="zZq-Z2-DJN" firstAttribute="top" secondItem="Qu5-qW-jdc" secondAttribute="bottom" constant="18" id="XTl-ZA-Pbf"/>
-                            <constraint firstItem="KVc-bI-xmV" firstAttribute="bottom" secondItem="zZq-Z2-DJN" secondAttribute="bottom" constant="93.670000000000002" id="hME-Jh-LI8"/>
+                            <constraint firstItem="FeY-l9-m3C" firstAttribute="top" secondItem="VoI-Ko-KLO" secondAttribute="bottom" constant="20" id="5oQ-mp-pAI"/>
+                            <constraint firstItem="VoI-Ko-KLO" firstAttribute="top" secondItem="KVc-bI-xmV" secondAttribute="top" constant="60" id="W50-6X-Sbu"/>
+                            <constraint firstItem="zZq-Z2-DJN" firstAttribute="top" secondItem="FeY-l9-m3C" secondAttribute="bottom" constant="20" id="eYo-7x-ag5"/>
+                            <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="FeY-l9-m3C" secondAttribute="trailing" constant="199" id="iRA-wW-Dpr"/>
+                            <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="VoI-Ko-KLO" secondAttribute="trailing" constant="40" id="kNl-tR-2VW"/>
                             <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="zZq-Z2-DJN" secondAttribute="trailing" constant="20" id="l4n-FV-3dE"/>
-                            <constraint firstItem="zZq-Z2-DJN" firstAttribute="leading" secondItem="KVc-bI-xmV" secondAttribute="leading" constant="14" id="sky-dx-D8e"/>
+                            <constraint firstItem="VoI-Ko-KLO" firstAttribute="leading" secondItem="KVc-bI-xmV" secondAttribute="leading" constant="40" id="mWP-YV-2bh"/>
+                            <constraint firstItem="FeY-l9-m3C" firstAttribute="leading" secondItem="VoI-Ko-KLO" secondAttribute="leading" id="qkP-l1-xdd"/>
                             <constraint firstItem="zZq-Z2-DJN" firstAttribute="leading" secondItem="KVc-bI-xmV" secondAttribute="leading" constant="14" id="w5X-Ki-JjP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KVc-bI-xmV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="globe" catalog="system" id="I9H-F2-eks"/>
+                    <connections>
+                        <outlet property="commentsTableView" destination="iPY-Bq-k8c" id="hF2-VO-GKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioY-gh-Prb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1691.304347826087" y="1484.5982142857142"/>
+            <point key="canvasLocation" x="-1507" y="1416"/>
         </scene>
         <!--ProfileView Controller-->
         <scene sceneID="7eB-A1-taA">
@@ -463,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CiV-H2-j3v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737.68115942028987" y="-686.38392857142856"/>
+            <point key="canvasLocation" x="-855" y="-9"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="IHF-ps-ed9">
@@ -514,10 +275,10 @@
             </objects>
             <point key="canvasLocation" x="-584.05797101449275" y="1106.9196428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="U9j-83-quf">
             <objects>
-                <viewController id="fJF-Xf-9or" sceneMemberID="viewController">
+                <viewController id="fJF-Xf-9or" customClass="SearchViewController" customModule="HateLines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EtJ-9Z-cNy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -691,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CS7-7n-eVw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734.7826086956522" y="407.8125"/>
+            <point key="canvasLocation" x="16" y="426"/>
         </scene>
     </scenes>
     <resources>
@@ -700,17 +461,13 @@
         <image name="Google" width="285" height="69"/>
         <image name="avatar-profile" width="225" height="225"/>
         <image name="camera" catalog="system" width="64" height="48"/>
-        <image name="chevron.down" catalog="system" width="64" height="36"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
-        <image name="chevron.up" catalog="system" width="64" height="36"/>
         <image name="globe" catalog="system" width="64" height="60"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="naruto" width="50" height="50"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="person.crop.square" catalog="system" width="64" height="56"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <image name="photo" catalog="system" width="64" height="46"/>
-        <image name="questionmark.circle.fill" catalog="system" width="64" height="60"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>
