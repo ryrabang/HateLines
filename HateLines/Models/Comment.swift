@@ -41,3 +41,53 @@ extension Comment: DocumentSerializable {
         self.init(ID:ID, userID:userID, postID:postID, phrase:phrase, likes:likes, createdAt:createdAt.dateValue())
     }
 }
+
+
+
+class CommmentModel {
+    private static func query(withID ID: Int?, userID:Int?, postID: Int?, sortBy: String?) -> Query {
+        
+        let baseQuery = Firestore.firestore().collection("comments").limit(to: Int(INT_MAX))
+        
+        var filtered = baseQuery
+        
+        if let id = ID {
+            filtered = filtered.whereField("ID", isEqualTo: id)
+        }
+        
+        if let userID = userID {
+            filtered = filtered.whereField("userID", isEqualTo: userID)
+        }
+        
+        if let postID = postID {
+            filtered = filtered.whereField("postID", isEqualTo: postID)
+        }
+        
+        if let sortBy = sortBy, !sortBy.isEmpty {
+            filtered = filtered.order(by: sortBy)
+        }
+        
+        return filtered
+    }
+    
+    static func getComments(withID ID: Int? = nil, userID:Int? = nil, postID: Int? = nil, sortBy: String? = nil, completion: @escaping([Comment], Error?) -> Void) {
+        let filteredQuery = query(withID:ID, userID:userID, postID: postID, sortBy:sortBy)
+        
+        filteredQuery.getDocuments { (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("Error fetching comment results: \(String(describing: error))")
+                return
+            }
+            
+            let comments = snapshot.documents.map { (document) -> Comment in
+                if let comment = Comment(dictionary: document.data()){
+                    return comment
+                }else {
+                    fatalError("Unable to initialize type \(Comment.self) with dictionary \(document.data())")
+                }
+            }
+            
+            completion(comments, error)
+        }
+    }
+}
