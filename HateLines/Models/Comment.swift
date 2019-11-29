@@ -90,4 +90,13 @@ class CommmentModel {
             completion(comments, error)
         }
     }
+    
+    /**
+        Add a new comment
+        - Parameter post: a post needed to be added
+        */
+       static func addComment(_ comment:Comment){
+           let ref = Firestore.firestore().collection("comments")
+           ref.document("\(comment.ID)").setData(comment.dictionary)
+       }
 }

@@ -94,4 +94,27 @@ class PostModel {
                completion(posts, error)
            }
        }
+    
+    /**
+     Add a new post
+     - Parameter post: a post needed to be added
+     */
+    static func addPost(_ post:Post){
+        let ref = Firestore.firestore().collection("posts")
+        ref.document("\(post.ID)").setData(post.dictionary)
+    }
+    
+    /**
+    Update the likes of a post by 1
+     - Parameter post: the post with updated likes 
+     */
+    static func upvote(of post: Post) {
+        let ref = Firestore.firestore().collection("posts")
+        ref.document("\(post.ID)").updateData(["likes": post.likes]) {
+            err in
+            if let err = err {
+                print("Error updating likes: \(err)")
+            }
+        }
+    }
 }

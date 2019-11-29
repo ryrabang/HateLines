@@ -96,4 +96,14 @@ class UserModel {
         }
     }
     
+    /**
+     Add a new user
+     - Parameter user: a user object needed to be added
+     */
+    static func addUser(_ user:User){
+        let ref = Firestore.firestore().collection("users")
+        ref.document("\(user.ID)").setData(user.dictionary)
+    }
+    
+    
 }

@@ -66,6 +66,7 @@ class ViewController: UIViewController {
                 print("comment: \(comment)")
             }
         }
+//        PostModel.upvote(of: <#T##Post#>)
     }
     
     func setUpElements() {
