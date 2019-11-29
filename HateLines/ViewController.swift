@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        uncomment this to seed new data
+//        let generator = DataGenerator()
+//        generator.seedUser()
+//        generator.seedPost()
+//        generator.seedComment()
     }
 
 

@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct User {
-    var ID : Int
+    var ID: Int
     var name: String
     var email: String
     var password: String
@@ -18,15 +18,28 @@ struct User {
     var verified: Bool
     
     var dictionary: [String: Any] {
-       return [
-         "ID": ID,
-         "name": name,
-         "email": email,
-         "password": password,
-         "imageUrl": imageUrl,
-         "verified": verified,
-       ]
-     }
+        return [
+            "ID": ID,
+            "name": name,
+            "email": email,
+            "password": password,
+            "imageUrl": imageUrl,
+            "verified": verified,
+        ]
+    }
     
 }
 
+extension User : DocumentSerializable {
+    init?(dictionary: [String : Any]) {
+        guard let ID = dictionary["ID"] as? Int,
+            let name = dictionary["name"] as? String,
+            let email = dictionary["email"] as? String,
+            let password = dictionary["password"] as? String,
+            let imageUrl = dictionary["imageUrl"] as? String,
+            let verified = dictionary["verified"] as? Bool
+            else { return nil }
+        
+        self.init(ID: ID, name:name, email:email, password:password, imageUrl:imageUrl, verified:verified)
+    }
+}

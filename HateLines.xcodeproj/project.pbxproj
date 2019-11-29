@@ -11,6 +11,8 @@
 		25BDC647239075AD00F177CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC646239075AD00F177CF /* SearchViewController.swift */; };
 		25BDC64923909CE300F177CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC64823909CE300F177CF /* User.swift */; };
 		25BDC64B23909D0000F177CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC64A23909D0000F177CF /* Comment.swift */; };
+		25BDC64D2390A3FC00F177CF /* LocalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC64C2390A3FC00F177CF /* LocalCollection.swift */; };
+		25BDC64F2390AEA600F177CF /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC64E2390AEA600F177CF /* SeedData.swift */; };
 		25C7ED8423750B260032F94B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7ED8323750B260032F94B /* ProfileViewController.swift */; };
 		25C7ED8923751FCF0032F94B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7ED8723751FCF0032F94B /* PostCell.swift */; };
 		25C7ED8A23751FCF0032F94B /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25C7ED8823751FCF0032F94B /* PostCell.xib */; };
@@ -33,6 +35,8 @@
 		25BDC646239075AD00F177CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		25BDC64823909CE300F177CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		25BDC64A23909D0000F177CF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		25BDC64C2390A3FC00F177CF /* LocalCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCollection.swift; sourceTree = "<group>"; };
+		25BDC64E2390AEA600F177CF /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
 		25C7ED8323750B260032F94B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		25C7ED8723751FCF0032F94B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		25C7ED8823751FCF0032F94B /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				25C7ED8D23752A090032F94B /* Post.swift */,
 				25BDC64823909CE300F177CF /* User.swift */,
 				25BDC64A23909D0000F177CF /* Comment.swift */,
+				25BDC64C2390A3FC00F177CF /* LocalCollection.swift */,
+				25BDC64E2390AEA600F177CF /* SeedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			files = (
 				25BDC647239075AD00F177CF /* SearchViewController.swift in Sources */,
 				BE703577233EB7A70020EC40 /* ViewController.swift in Sources */,
+				25BDC64F2390AEA600F177CF /* SeedData.swift in Sources */,
+				25BDC64D2390A3FC00F177CF /* LocalCollection.swift in Sources */,
 				25C7ED8423750B260032F94B /* ProfileViewController.swift in Sources */,
 				762048422350515F0027C949 /* CameraViewController.swift in Sources */,
 				25C7ED8E23752A090032F94B /* Post.swift in Sources */,
