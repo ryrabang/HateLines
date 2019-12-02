@@ -12,8 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpElements()
         
         // while using the query, you might receive saying "query requires an index" and follow
         // a link to create the index, just copy that link and create the required index
@@ -54,6 +59,11 @@ class ViewController: UIViewController {
                 print("comment: \(comment)")
             }
         }
+    }
+    
+    func setUpElements() {
+        Utilities.styleFilledButton(signUpButton)
+        Utilities.styleHollowButton(loginButton)
     }
     
     
