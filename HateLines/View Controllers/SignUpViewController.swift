@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ class SignUpViewController: UIViewController {
 //
                 if err != nil { // Check for errors
                     self.showError("Error creating user")
+                    print(err!)
                 } else { // User was created successfully
                     let db = Firestore.firestore()
                     db.collection("users").addDocument(data: ["email":email, "imageUrl":"george@image.com","name":fullName, "password":password, "verified":"false"]) { (error) in
@@ -96,9 +98,9 @@ class SignUpViewController: UIViewController {
     }
     
     func transitionToHome() {
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController)
+        let tabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
         
-        view.window?.rootViewController = homeViewController
+        view.window?.rootViewController = tabBarController
         view.window?.makeKeyAndVisible()
     }
     
@@ -117,6 +119,13 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
+        
+        self.view.window?.rootViewController = viewController
+        self.view.window?.makeKeyAndVisible()
     }
     
 }

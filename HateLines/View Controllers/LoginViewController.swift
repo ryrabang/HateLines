@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,14 +38,11 @@ class LoginViewController: UIViewController {
                 // Could not sign in
                 self.errorLabel.text = err!.localizedDescription
                 self.errorLabel.alpha = 1
+                print(err!)
             } else {
-                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController)
-                
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
+                self.transitionToTabBar()
             }
         }
-        
     }
     
     func setUpElements() {
@@ -54,5 +53,19 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
+    }
+    
+    func transitionToTabBar() {
+        let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
+        
+        self.view.window?.rootViewController = tabBarController
+        self.view.window?.makeKeyAndVisible()
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
+        
+        self.view.window?.rootViewController = viewController
+        self.view.window?.makeKeyAndVisible()
     }
 }

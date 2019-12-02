@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileViewController: UIViewController{
-    
     
     @IBOutlet weak var hateFeedTableView: UITableView!
     @IBOutlet weak var yourHateTableView: UITableView!
@@ -46,4 +46,21 @@ class ProfileViewController: UIViewController{
         yourHateTableView.rowHeight = 70
     }
     
+    @IBAction func logoutButtonPressed(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            
+            transitionToHomePage()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
+    func transitionToHomePage() {
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
+        
+        self.view.window?.rootViewController = viewController
+        self.view.window?.makeKeyAndVisible()
+    }
 }
