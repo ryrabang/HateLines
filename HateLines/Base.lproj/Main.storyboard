@@ -76,7 +76,7 @@
                                             <action selector="signUpTapped:" destination="Juh-2p-O2W" eventType="touchUpInside" id="lQi-fl-rLa"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uml-3G-ZNm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uml-3G-ZNm">
                                         <rect key="frame" x="0.0" y="350" width="334" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -156,18 +156,31 @@
                                     <constraint firstItem="lIK-Gd-MbN" firstAttribute="height" secondItem="IGA-lw-Km5" secondAttribute="height" multiplier="0.75" id="B8i-83-EVL"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LoveLines" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="21" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQN-5g-b7f">
+                                <rect key="frame" x="29.333333333333332" y="403.33333333333331" width="361.66666666666663" height="89.666666666666657"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="69"/>
+                                <color key="textColor" red="0.96848052740097046" green="0.84080837765007188" blue="0.12632170114435917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="highlightedColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="-1" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kee-4m-865" secondAttribute="bottom" constant="40" id="AXw-4S-wZe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kee-4m-865" secondAttribute="trailing" constant="40" id="BCD-CZ-fMh"/>
                             <constraint firstItem="Kee-4m-865" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="GyP-zD-6EU"/>
+                            <constraint firstItem="SQN-5g-b7f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cex-oJ-5TS"/>
+                            <constraint firstItem="SQN-5g-b7f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zmn-5n-Lmd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="lpD-Ca-zP9"/>
                     <connections>
                         <outlet property="loginButton" destination="lIK-Gd-MbN" id="ejL-UI-R7O"/>
+                        <outlet property="logoLabel" destination="SQN-5g-b7f" id="3qr-n9-Rc4"/>
                         <outlet property="signUpButton" destination="IGA-lw-Km5" id="LUc-X8-QXn"/>
                     </connections>
                 </viewController>
@@ -180,7 +193,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="zPw-HA-zDw" customClass="LoginViewController" customModule="HateLines" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0na-hX-mNa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cym-hX-sg8">
@@ -206,7 +219,7 @@
                                             <action selector="loginTapped:" destination="zPw-HA-zDw" eventType="touchUpInside" id="a6I-bX-ZZn"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0X-7R-m7M">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0X-7R-m7M">
                                         <rect key="frame" x="0.0" y="210" width="334" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -678,6 +691,6 @@
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y6X-Bg-3NM"/>
+        <segue reference="XeJ-uS-zQE"/>
     </inferredMetricsTieBreakers>
 </document>

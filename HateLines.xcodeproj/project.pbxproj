@@ -32,6 +32,7 @@
 		FA08A4F72394D2B10051EA0B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08A4F62394D2B10051EA0B /* SignUpViewController.swift */; };
 		FA08A4F92394DA9E0051EA0B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08A4F82394DA9E0051EA0B /* Utilities.swift */; };
 		FA08A4FC2394F65A0051EA0B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08A4FB2394F65A0051EA0B /* Constants.swift */; };
+		FA08A5002395C4CA0051EA0B /* hearts.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA08A4FF2395C4CA0051EA0B /* hearts.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		FA08A4F62394D2B10051EA0B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FA08A4F82394DA9E0051EA0B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		FA08A4FB2394F65A0051EA0B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA08A4FF2395C4CA0051EA0B /* hearts.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hearts.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			children = (
 				BE703572233EB7A70020EC40 /* AppDelegate.swift */,
 				BE703574233EB7A70020EC40 /* SceneDelegate.swift */,
+				FA08A4FE2395C48A0051EA0B /* Media */,
 				25C7ED9023752A4A0032F94B /* Views */,
 				25C7ED8F23752A280032F94B /* Models */,
 				FA08A4FA2394DAC20051EA0B /* Helpers */,
@@ -175,6 +178,14 @@
 				FA08A4FB2394F65A0051EA0B /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FA08A4FE2395C48A0051EA0B /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				FA08A4FF2395C4CA0051EA0B /* hearts.mp4 */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA08A5002395C4CA0051EA0B /* hearts.mp4 in Resources */,
 				BE70357F233EB7A80020EC40 /* LaunchScreen.storyboard in Resources */,
 				BE70357C233EB7A80020EC40 /* Assets.xcassets in Resources */,
 				25E6BE912389D82C004DD157 /* GoogleService-Info.plist in Resources */,
