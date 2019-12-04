@@ -11,6 +11,7 @@ import UIKit
 class CameraViewController: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UISearchBarDelegate{
 
+
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var imageView: UIImageView!
@@ -35,7 +36,20 @@ UINavigationControllerDelegate, UISearchBarDelegate{
         // Do any additional setup after loading the view.
     }
     
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchString = searchBar.text!
+        
+        var searchedUsers: [User] = []
+        
+        for user in users {
+            if user.name.contains(searchString) {
+                print(user.name)
+                searchedUsers.append(user)
+            }
+        }
+        searchTableManager?.updateUsers(data: searchedUsers)
+        searchTableView.reloadData()
+    }
     
     @IBAction func PickImages(_ sender: UIButton) {
 
@@ -126,5 +140,5 @@ UINavigationControllerDelegate, UISearchBarDelegate{
         //          }
         //        }
     }
-    
+
 }

@@ -22,9 +22,7 @@ class SearchTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource 
     }
     
     init(withData data: [User]){
-       
         users = data
-       
     }
     
     func updateUsers(data: [User]) {
