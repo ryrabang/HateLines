@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pfT-eQ-iv3">
-                                <rect key="frame" x="40" y="83.999999999999972" width="334" height="370.33333333333326"/>
+                                <rect key="frame" x="40" y="83.999999999999972" width="334" height="490.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ccq-8j-Efh">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -66,8 +66,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1G-gS-ZLt">
+                                        <rect key="frame" x="0.0" y="280" width="334" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="h69-0O-LKz"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="upload-img100"/>
+                                        <connections>
+                                            <action selector="PickImages:" destination="Juh-2p-O2W" eventType="touchUpInside" id="Gmq-c1-29C"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0X-DW-YU7">
-                                        <rect key="frame" x="0.0" y="280" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="400" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WLv-7T-uWj"/>
                                         </constraints>
@@ -77,7 +87,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uml-3G-ZNm">
-                                        <rect key="frame" x="0.0" y="350" width="334" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="470" width="334" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -114,6 +124,7 @@
                         <outlet property="emailTextField" destination="HYZ-zV-d7J" id="kyL-97-rWn"/>
                         <outlet property="errorLabel" destination="Uml-3G-ZNm" id="b48-gU-3lg"/>
                         <outlet property="firstNameTextField" destination="Ccq-8j-Efh" id="0Cz-Sr-mLb"/>
+                        <outlet property="imageButton" destination="S1G-gS-ZLt" id="E8R-YK-QeN"/>
                         <outlet property="lastNameTextField" destination="KGf-GX-cgJ" id="CRa-WE-H33"/>
                         <outlet property="passwordTextField" destination="5Tk-cR-Gbe" id="JLv-M7-Man"/>
                         <outlet property="signUpButton" destination="w0X-DW-YU7" id="pgu-BJ-MmR"/>
@@ -121,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2F-oH-G35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2451" y="-702"/>
+            <point key="canvasLocation" x="-2452.1739130434785" y="-702.45535714285711"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -544,6 +555,7 @@
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <image name="photo" catalog="system" width="64" height="46"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="upload-img100" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y6X-Bg-3NM"/>
