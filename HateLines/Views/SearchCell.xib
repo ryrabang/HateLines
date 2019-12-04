@@ -53,6 +53,10 @@
                     <constraint firstAttribute="trailing" secondItem="1xx-d1-3NX" secondAttribute="trailing" constant="10" id="rGA-G2-cMR"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="Rd0-CM-9ka" id="4N3-2Q-I6A"/>
+                <outlet property="profileImage" destination="nM8-ka-4B8" id="quN-dg-8iP"/>
+            </connections>
             <point key="canvasLocation" x="24.637681159420293" y="-23.4375"/>
         </tableViewCell>
     </objects>

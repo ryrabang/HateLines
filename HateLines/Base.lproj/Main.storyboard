@@ -507,6 +507,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="qIA-4k-tMl"/>
                     <connections>
+                        <outlet property="searchBar" destination="Ekk-OA-7Qc" id="0FY-ja-LNK"/>
                         <outlet property="searchTableView" destination="1st-TD-Npc" id="VCZ-Fl-WMg"/>
                     </connections>
                 </viewController>
