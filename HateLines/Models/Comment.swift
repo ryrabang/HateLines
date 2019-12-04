@@ -10,18 +10,16 @@ import Foundation
 import Firebase
 
 struct Comment {
-    var ID: Int
-    var userID: Int
-    var postID: Int
+    var postRef: DocumentReference
+    var userID: String
     var phrase: String
     var likes: Int
     var createdAt: Date
     
     var dictionary : [String : Any] {
         return [
-            "ID":ID,
             "userID":userID,
-            "postID":postID,
+            "postRef":postRef,
             "phrase":phrase,
             "likes":likes,
             "createdAt": createdAt
@@ -31,36 +29,36 @@ struct Comment {
 
 extension Comment: DocumentSerializable {
     init?(dictionary: [String : Any]) {
-        guard let ID = dictionary["ID"] as? Int,
-            let userID = dictionary["userID"] as? Int,
-            let postID = dictionary["postID"] as? Int,
+        guard
+            let userID = dictionary["userID"] as? String,
+            let postRef = dictionary["postRef"] as? DocumentReference,
             let phrase = dictionary["phrase"] as? String,
             let likes = dictionary["likes"] as? Int,
             let createdAt = dictionary["createdAt"] as? Timestamp else {return nil}
         
-        self.init(ID:ID, userID:userID, postID:postID, phrase:phrase, likes:likes, createdAt:createdAt.dateValue())
+        self.init(postRef:postRef, userID:userID, phrase:phrase, likes:likes, createdAt:createdAt.dateValue())
     }
 }
 
 
 
 class CommmentModel {
-    private static func query(withID ID: Int?, userID:Int?, postID: Int?, sortBy: String?) -> Query {
+    private static func query(withPostRef postRef: DocumentReference?, userID:String?, likes: Int?, sortBy: String?) -> Query {
         
         let baseQuery = Firestore.firestore().collection("comments").limit(to: Int(INT_MAX))
         
         var filtered = baseQuery
         
-        if let id = ID {
-            filtered = filtered.whereField("ID", isEqualTo: id)
+        if let postRef = postRef {
+            filtered = filtered.whereField("postRef", isEqualTo: postRef)
         }
         
         if let userID = userID {
             filtered = filtered.whereField("userID", isEqualTo: userID)
         }
         
-        if let postID = postID {
-            filtered = filtered.whereField("postID", isEqualTo: postID)
+        if let likes = likes {
+            filtered = filtered.whereField("likes", isGreaterThan:likes)
         }
         
         if let sortBy = sortBy, !sortBy.isEmpty {
@@ -70,8 +68,8 @@ class CommmentModel {
         return filtered
     }
     
-    static func getComments(withID ID: Int? = nil, userID:Int? = nil, postID: Int? = nil, sortBy: String? = nil, completion: @escaping([Comment], Error?) -> Void) {
-        let filteredQuery = query(withID:ID, userID:userID, postID: postID, sortBy:sortBy)
+    static func getComments(withPostRef postRef: DocumentReference?, userID:String?, likes: Int?, sortBy: String?, completion: @escaping([Comment], Error?) -> Void) {
+        let filteredQuery = query(withPostRef:postRef, userID:userID, likes: likes, sortBy:sortBy)
         
         filteredQuery.getDocuments { (snapshot, error) in
             guard let snapshot = snapshot else {
@@ -97,6 +95,6 @@ class CommmentModel {
         */
        static func addComment(_ comment:Comment){
            let ref = Firestore.firestore().collection("comments")
-           ref.document("\(comment.ID)").setData(comment.dictionary)
+           ref.document().setData(comment.dictionary)
        }
 }

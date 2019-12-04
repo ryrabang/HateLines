@@ -41,7 +41,6 @@ class DataGenerator {
     func seedUser() {
         let firtnames = [ "Adam", "Alex", "Aaron", "Ben", "Carl", "Dan", "David", "Edward", "Fred", "Frank", "George", "Hal", "Hank", "Ike"]
         let lastnames = [ "Anderson", "Ashwoon", "Aikin", "Bateman", "Bongard", "Bowers", "Boyd", "Cannon", "Cast", "Deitz", "Dewalt", "Ebner", "Frick", "Hancock", "Haworth"]
-        let collection = db.collection("users")
         for i in 0...20 {
             let randomIndexes = (Int(arc4random_uniform(UInt32(firtnames.count))),
                                  Int(arc4random_uniform(UInt32(lastnames.count))))
@@ -52,10 +51,10 @@ class DataGenerator {
             let password = firstname + "@" + "password"
             let imageUrl = firstname + "@image.com"
             let verified = false
-            let ID = i
+            let ID = String(i)
             
             let user = User(ID: ID, name: name, email: email, password: password, imageUrl: imageUrl, verified: verified)
-            collection.document("\(user.ID)").setData(user.dictionary)
+            UserModel.addUser(user)
         }
         
         
@@ -72,7 +71,7 @@ class DataGenerator {
     func seedPost() {
         let collection = db.collection("posts")
         
-        for i in 0...50 {
+        for _ in 0...50 {
             let userID = Int(arc4random_uniform(UInt32(20)))
             var againstID = Int(arc4random_uniform(UInt32(20)))
             
@@ -88,9 +87,11 @@ class DataGenerator {
             let likes = Int(arc4random_uniform(UInt32(100)))
             let createdAt = generateRandomDate(daysBack: Int(arc4random_uniform(UInt32(200))))
             
-            let post = Post(ID: i, userID: userID, againstID: againstID, imageUrl: imageUrl, phrase: phrase, likes: likes, createdAt: createdAt!)
+            let postRef = collection.document()
             
-            collection.document("\(post.ID)").setData(post.dictionary)
+            let post = Post(postRef: postRef, userID: String(userID), againstID: String(againstID), imageUrl: imageUrl, phrase: phrase, likes: likes, createdAt: createdAt!)
+            
+            PostModel.addPost(to: postRef, post: post)
         }
         
     }
@@ -101,12 +102,11 @@ class DataGenerator {
     //    var phrase: String
     //    var likes: Int
     //    var createdAt: Date
-    func seedComment() {
-        let collection = db.collection("comments")
+    func seedComment(posts:[Post]) {
         
-        for i in 0...200 {
+        for _ in 0...200 {
             let userID = Int(arc4random_uniform(UInt32(20)))
-            let postID = Int(arc4random_uniform(UInt32(50)))
+            let postRef = posts[Int(arc4random_uniform(UInt32(50)))].postRef
             
             let randomIndex = Int(arc4random_uniform(UInt32(sentences.count)))
                       
@@ -114,9 +114,9 @@ class DataGenerator {
             let likes = Int(arc4random_uniform(UInt32(100)))
             let createdAt = generateRandomDate(daysBack: Int(arc4random_uniform(UInt32(200))))
             
-            let comment = Comment(ID: i, userID: userID, postID: postID, phrase: phrase, likes: likes, createdAt: createdAt!)
+            let comment = Comment(postRef: postRef, userID: String(userID), phrase: phrase, likes: likes, createdAt: createdAt!)
             
-            collection.document("\(comment.ID)").setData(comment.dictionary)
+            CommmentModel.addComment(comment)
         }
         
     }
