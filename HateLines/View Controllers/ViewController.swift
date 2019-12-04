@@ -30,11 +30,19 @@ class ViewController: UIViewController {
         // while using the query, you might receive saying "query requires an index" and follow
         // a link to create the index, just copy that link and create the required index
         
-        //        uncomment this to seed new data
-//                let generator = DataGenerator()
-//                generator.seedUser()
-//                generator.seedPost()
-//                generator.seedComment()
+
+//        let generator = DataGenerator()
+//        generator.seedUser()
+//        generator.seedPost()
+//        PostModel.getPost { (posts, error) in
+//            if (error != nil) {
+//                print("error: \(String(describing: error))")
+//            }else{
+//                generator.seedComment(posts: posts)
+//            }
+//            
+//        }
+        
         
         //        UserModel.getUser(sortBy:"ID") {
         //            (users, err) in
@@ -60,13 +68,13 @@ class ViewController: UIViewController {
         //                print("comment: \(comment)")
         //            }
         //        }
-        CommmentModel.getComments(postID: 3,sortBy:"createdAt") {
-            (comments, err) in
-            for comment in comments {
-                print("comment: \(comment)")
-            }
-        }
-//        PostModel.upvote(of: <#T##Post#>)
+        //        CommmentModel.getComments(postID: 3,sortBy:"createdAt") {
+        //            (comments, err) in
+        //            for comment in comments {
+        //                print("comment: \(comment)")
+        //            }
+        //        }
+        //        PostModel.upvote(of: <#T##Post#>)
     }
     
     func setUpElements() {

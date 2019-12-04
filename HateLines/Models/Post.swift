@@ -11,9 +11,9 @@ import Firebase
 
 
 struct Post {
-    var ID: Int
-    var userID: Int
-    var againstID: Int
+    var postRef: DocumentReference
+    var userID: String
+    var againstID: String
     var imageUrl: String
     var phrase: String
     var likes: Int
@@ -21,7 +21,7 @@ struct Post {
     
     var dictionary: [String: Any] {
         return [
-            "ID": ID,
+            "postRef": postRef,
             "userID": userID,
             "againstID": againstID,
             "imageUrl": imageUrl,
@@ -35,29 +35,25 @@ struct Post {
 
 extension Post : DocumentSerializable {
     init?(dictionary: [String : Any]) {
-        guard let ID = dictionary["ID"] as? Int,
-            let userID = dictionary["userID"] as? Int,
-            let againstID = dictionary["againstID"] as? Int,
+        guard let postRef = dictionary["postRef"] as? DocumentReference,
+            let userID = dictionary["userID"] as? String,
+            let againstID = dictionary["againstID"] as? String,
             let imageUrl = dictionary["imageUrl"] as? String,
             let phrase = dictionary["phrase"] as? String,
             let createdAt = dictionary["createdAt"] as? Timestamp,
             let likes = dictionary["likes"] as? Int else {return nil}
         
         
-        self.init(ID:ID, userID:userID, againstID:againstID, imageUrl:imageUrl, phrase:phrase, likes:likes, createdAt:createdAt.dateValue())
+        self.init(postRef:postRef, userID:userID, againstID:againstID, imageUrl:imageUrl, phrase:phrase, likes:likes, createdAt:createdAt.dateValue())
         
     }
 }
 
 class PostModel {
-    private static func query(withID ID:Int?, userID:Int?, againstID:Int?, sortBy:String?) -> Query {
+    private static func query(userID:String?, againstID:String?, sortBy:String?) -> Query {
         let baseQuery = Firestore.firestore().collection("posts").limit(to: Int(INT_MAX))
         
         var filtered = baseQuery
-        
-        if let id = ID {
-            filtered = filtered.whereField("ID", isEqualTo: id)
-        }
         
         if let userId = userID {
             filtered = filtered.whereField("userID", isEqualTo: userId)
@@ -74,8 +70,8 @@ class PostModel {
         return filtered
     }
     
-    static func getPost(withID ID:Int? = nil, userID:Int? = nil, againstID:Int? = nil, sortBy:String? = nil, completion: @escaping([Post], Error?) -> Void) {
-           let filteredQuery = query(withID:ID, userID:userID, againstID:againstID, sortBy:sortBy)
+    static func getPost(userID:String? = nil, againstID:String? = nil, sortBy:String? = nil, completion: @escaping([Post], Error?) -> Void) {
+           let filteredQuery = query(userID:userID, againstID:againstID, sortBy:sortBy)
            
            filteredQuery.getDocuments { (snapshot, error) in
                guard let snapshot = snapshot else {
@@ -99,9 +95,8 @@ class PostModel {
      Add a new post
      - Parameter post: a post needed to be added
      */
-    static func addPost(_ post:Post){
-        let ref = Firestore.firestore().collection("posts")
-        ref.document("\(post.ID)").setData(post.dictionary)
+    static func addPost(to postRef:DocumentReference, post:Post){
+        postRef.setData(post.dictionary)
     }
     
     /**
@@ -109,8 +104,8 @@ class PostModel {
      - Parameter post: the post with updated likes 
      */
     static func upvote(of post: Post) {
-        let ref = Firestore.firestore().collection("posts")
-        ref.document("\(post.ID)").updateData(["likes": post.likes]) {
+//        let ref = Firestore.firestore().collection("posts")
+        post.postRef.updateData(["likes": post.likes]) {
             err in
             if let err = err {
                 print("Error updating likes: \(err)")

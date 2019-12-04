@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct User {
-    var ID: Int
+    var ID: String
     var name: String
     var email: String
     var password: String
@@ -32,7 +32,7 @@ struct User {
 
 extension User : DocumentSerializable {
     init?(dictionary: [String : Any]) {
-        guard let ID = dictionary["ID"] as? Int,
+        guard let ID = dictionary["ID"] as? String,
             let name = dictionary["name"] as? String,
             let email = dictionary["email"] as? String,
             let password = dictionary["password"] as? String,
@@ -46,7 +46,7 @@ extension User : DocumentSerializable {
 
 
 class UserModel {
-    private static func query(withID ID: Int?, name:String?, email: String?, verified: Bool?, sortBy: String?) -> Query {
+    private static func query(withID ID: String?, name:String?, email: String?, verified: Bool?, sortBy: String?) -> Query {
         
         let baseQuery = Firestore.firestore().collection("users").limit(to: Int(INT_MAX))
         
@@ -75,7 +75,7 @@ class UserModel {
         return filtered
     }
     
-    static func getUser(withID ID: Int? = nil, name:String? = nil, email: String? = nil, verified: Bool? = nil, sortBy: String? = nil, completion: @escaping([User], Error?) -> Void) {
+    static func getUser(withID ID: String? = nil, name:String? = nil, email: String? = nil, verified: Bool? = nil, sortBy: String? = nil, completion: @escaping([User], Error?) -> Void) {
         let filteredQuery = query(withID: ID, name: name, email: email, verified: verified, sortBy: sortBy)
         
         filteredQuery.getDocuments { (snapshot, error) in
