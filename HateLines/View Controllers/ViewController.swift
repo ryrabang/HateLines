@@ -31,10 +31,10 @@ class ViewController: UIViewController {
         // a link to create the index, just copy that link and create the required index
         
         //        uncomment this to seed new data
-        //        let generator = DataGenerator()
-        //        generator.seedUser()
-        //        generator.seedPost()
-        //        generator.seedComment()
+//                let generator = DataGenerator()
+//                generator.seedUser()
+//                generator.seedPost()
+//                generator.seedComment()
         
         //        UserModel.getUser(sortBy:"ID") {
         //            (users, err) in

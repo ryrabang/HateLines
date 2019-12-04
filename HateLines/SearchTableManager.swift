@@ -13,12 +13,11 @@ class SearchTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource 
     
     var users: [User] = []
     
-    init(connect tableView:UITableView,withData data: [User]) {
+    init(connect tableView:UITableView) {
         super.init()
         tableView.register(UINib(nibName: "SearchCell", bundle: nil), forCellReuseIdentifier: "searchCell")
         tableView.dataSource = self
         tableView.delegate = self
-        users = data
         tableView.rowHeight = 70
     }
     
@@ -28,6 +27,9 @@ class SearchTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource 
        
     }
     
+    func updateUsers(data: [User]) {
+        self.users = data
+    }
     //MARK: - Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Search: get rows")
@@ -37,7 +39,7 @@ class SearchTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("Search: getting cells")
         let searchCell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as! SearchCell
-        
+        searchCell.loadData(user: users[indexPath.row])
         return searchCell
     }
     

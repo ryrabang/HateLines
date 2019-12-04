@@ -8,19 +8,45 @@
 
 import UIKit
 
-class SearchViewController:UIViewController {
+class SearchViewController:UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchTableView: UITableView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var searchTableManager:SearchTableManager?
-    let users:[User] = []
+    var users:[User] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        searchTableManager = SearchTableManager(connect: searchTableView,withData: users)
+        UserModel.getUser {
+            [weak self](users, error) in
+            if (error != nil) {
+                print("error\(error)")
+            }
+            self?.users = users
+        }
+        searchTableManager = SearchTableManager(connect: searchTableView)
+        searchBar.delegate = self
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchString = searchBar.text!
+        
+        var searchedUsers: [User] = []
+        
+        for user in users {
+            if user.name.contains(searchString) {
+                print(user.name)
+                searchedUsers.append(user)
+            }
+        }
+        searchTableManager?.updateUsers(data: searchedUsers)
+        searchTableView.reloadData()
+    }
+    
+    
     
 }

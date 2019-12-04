@@ -9,7 +9,12 @@
 import UIKit
 
 class SearchCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +23,10 @@ class SearchCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func loadData(user : User) {
+        nameLabel.text = user.name
     }
     
 }

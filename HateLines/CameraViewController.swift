@@ -1,5 +1,5 @@
 //
-//  CameraViewController.swift
+//  CameraViewController.swift/Users/a01043635/Desktop/HateLines/HateLines/SearchViewController.swift
 //  HateLines
 //
 //  Created by Younhee Lee on 2019-10-10.
@@ -9,16 +9,34 @@
 import UIKit
 
 class CameraViewController: UIViewController,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate{
+UINavigationControllerDelegate, UISearchBarDelegate{
 
+    @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var imageView: UIImageView!
+    
+    
+    var searchTableManager:SearchTableManager?
+    var users:[User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        UserModel.getUser {
+            [weak self](users, error) in
+            if (error != nil) {
+                print("error\(error)")
+            }
+            self?.users = users
+        }
+        searchTableManager = SearchTableManager(connect: searchTableView)
+        searchBar.delegate = self
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    
     @IBAction func PickImages(_ sender: UIButton) {
 
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
@@ -69,6 +87,44 @@ UINavigationControllerDelegate{
         let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         imageView.image = image
         self.dismiss(animated: true, completion: nil)
+        
+        //        //storage Reference
+        //        let storageRef = storage.reference()
+        //
+        //        // Data in memory
+        //        let data = image?.jpegData(compressionQuality: 0.5)
+        //
+        //        //metadata setting
+        //        let metadata = StorageMetadata()
+        //        metadata.contentType = "image/jpeg"
+        //
+        //        // Create a reference to the file you want to upload
+        //        let ref = storageRef.child("images/test.jpg")
+        //
+        //        // Upload the file to the path "images/rivers.jpg"
+        //        let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
+        //          guard let metadata = metadata else {
+        //            print(error)
+        //            return
+        //          }
+        //          // Metadata contains file metadata such as size, content-type.
+        //          let size = metadata.size
+        //          // You can also access to download URL after upload.
+        //          ref.downloadURL { (url, error) in
+        //            guard let downloadURL = url else {
+        //              return
+        //            }
+        //            self.db.collection("users").addDocument(data:[
+        //                "image": "\(downloadURL)"
+        //            ]) {
+        //                err in
+        //                if let err = err {
+        //                    print(err)
+        //                }
+        //            }
+        //
+        //          }
+        //        }
     }
     
 }
