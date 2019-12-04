@@ -20,6 +20,9 @@
 		25C7ED8E23752A090032F94B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7ED8D23752A090032F94B /* Post.swift */; };
 		25E6BE912389D82C004DD157 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E6BE902389D82C004DD157 /* GoogleService-Info.plist */; };
 		762048422350515F0027C949 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048412350515F0027C949 /* CameraViewController.swift */; };
+		BE16B10923983AC600A82858 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE16B10823983AC600A82858 /* SearchCell.swift */; };
+		BE16B10B23983AE400A82858 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE16B10A23983AE400A82858 /* SearchCell.xib */; };
+		BE16B10D23983E1200A82858 /* SearchTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE16B10C23983E1200A82858 /* SearchTableManager.swift */; };
 		BE703573233EB7A70020EC40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE703572233EB7A70020EC40 /* AppDelegate.swift */; };
 		BE703575233EB7A70020EC40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE703574233EB7A70020EC40 /* SceneDelegate.swift */; };
 		BE703577233EB7A70020EC40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE703576233EB7A70020EC40 /* ViewController.swift */; };
@@ -52,6 +55,9 @@
 		41526349EC42370824665847 /* Pods_HateLines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HateLines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADA1CDBC22E64F6D48E0BF /* Pods-HateLines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HateLines.debug.xcconfig"; path = "Target Support Files/Pods-HateLines/Pods-HateLines.debug.xcconfig"; sourceTree = "<group>"; };
 		762048412350515F0027C949 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		BE16B10823983AC600A82858 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		BE16B10A23983AE400A82858 /* SearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		BE16B10C23983E1200A82858 /* SearchTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableManager.swift; sourceTree = "<group>"; };
 		BE70356F233EB7A70020EC40 /* HateLines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HateLines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE703572233EB7A70020EC40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE703574233EB7A70020EC40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 			children = (
 				25C7ED8723751FCF0032F94B /* PostCell.swift */,
 				25C7ED8823751FCF0032F94B /* PostCell.xib */,
+				BE16B10A23983AE400A82858 /* SearchCell.xib */,
+				BE16B10823983AC600A82858 /* SearchCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 				25E6BE902389D82C004DD157 /* GoogleService-Info.plist */,
 				25BDC6442390753E00F177CF /* GlobalViewController.swift */,
 				25BDC646239075AD00F177CF /* SearchViewController.swift */,
+				BE16B10C23983E1200A82858 /* SearchTableManager.swift */,
 			);
 			path = HateLines;
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 				BE70357F233EB7A80020EC40 /* LaunchScreen.storyboard in Resources */,
 				BE70357C233EB7A80020EC40 /* Assets.xcassets in Resources */,
 				25E6BE912389D82C004DD157 /* GoogleService-Info.plist in Resources */,
+				BE16B10B23983AE400A82858 /* SearchCell.xib in Resources */,
 				BE70357A233EB7A70020EC40 /* Main.storyboard in Resources */,
 				25C7ED8A23751FCF0032F94B /* PostCell.xib in Resources */,
 			);
@@ -307,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25BDC647239075AD00F177CF /* SearchViewController.swift in Sources */,
+				BE16B10923983AC600A82858 /* SearchCell.swift in Sources */,
 				FA08A4FC2394F65A0051EA0B /* Constants.swift in Sources */,
 				BE703577233EB7A70020EC40 /* ViewController.swift in Sources */,
 				25BDC64F2390AEA600F177CF /* SeedData.swift in Sources */,
@@ -318,6 +329,7 @@
 				762048422350515F0027C949 /* CameraViewController.swift in Sources */,
 				25C7ED8E23752A090032F94B /* Post.swift in Sources */,
 				25BDC6452390753E00F177CF /* GlobalViewController.swift in Sources */,
+				BE16B10D23983E1200A82858 /* SearchTableManager.swift in Sources */,
 				25C7ED8C237529AB0032F94B /* PostsTableManager.swift in Sources */,
 				25BDC64B23909D0000F177CF /* Comment.swift in Sources */,
 				BE703573233EB7A70020EC40 /* AppDelegate.swift in Sources */,
