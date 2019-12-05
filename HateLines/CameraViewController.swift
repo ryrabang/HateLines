@@ -34,7 +34,7 @@ UINavigationControllerDelegate, UISearchBarDelegate{
         UserModel.getUser {
             [weak self](users, error) in
             if (error != nil) {
-                print("error\(error)")
+                return print(error as Any)
             }
             self?.users = users
         }
@@ -42,6 +42,11 @@ UINavigationControllerDelegate, UISearchBarDelegate{
         searchBar.delegate = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -127,47 +132,47 @@ UINavigationControllerDelegate, UISearchBarDelegate{
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
 
+        // reference Id
+        let collection = self.db.collection("posts")
+        let postRef = collection.document()
+        
+        // get the post id for image name
+        let fileName = postRef.documentID
         // Create a reference to the file you want to upload
-        let ref = storageRef.child("images/test.jpg")
+        let ref = storageRef.child("images/\(fileName).jpg")
 
         // Upload the file to the path "images/rivers.jpg"
-        let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
-          guard let metadata = metadata else {
-            print(error)
+        ref.putData(data!, metadata: metadata) { (metadata, error) in
+            guard metadata != nil else {
+            print(error as Any)
             return
           }
           // Metadata contains file metadata such as size, content-type.
-          let size = metadata.size
           // You can also access to download URL after upload.
           ref.downloadURL { (url, error) in
             guard let downloadURL = url else {
               return
             }
-//            self.db.collection("posts").addDocument(data:[
-//                "image": "\(downloadURL)"
-//            ]) {
-//                err in
-//                if let err = err {
-//                    print(err)
-//                }
-//            }
-            let collection = self.db.collection("posts")
+            
             
             let currentId = Auth.auth().currentUser?.uid
             let againstID = user.ID
             let imageUrl = "\(downloadURL)"
             let phrase = message
-            let likes = Int(arc4random_uniform(UInt32(100)))
             let createdAt = self.generateRandomDate(daysBack: Int(arc4random_uniform(UInt32(200))))
             
-            let postRef = collection.document()
-
+            
+            print("postId: \(postRef.documentID)")
             
             let post = Post(postRef: postRef, userID: currentId!, againstID: againstID, imageUrl: imageUrl, phrase: phrase!, likes: 0, createdAt: createdAt!)
           
             PostModel.addPost(to: postRef, post: post)
         }
         }
+        
+        
+        self.tabBarController!.selectedIndex = 0;
+
     }
     
     func generateRandomDate(daysBack: Int)-> Date?{

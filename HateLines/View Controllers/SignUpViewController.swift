@@ -68,16 +68,15 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
               let ref = storageRef.child("images/" + "heelli" + ".jpg")
 
               let userUID = Auth.auth().currentUser?.uid
-              print("userUID: \(userUID)")
+            print("userUID: \(String(describing: userUID))")
 
               // Upload the file to the path "images/rivers.jpg"
-              let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
-                guard let metadata = metadata else {
-                  print(error)
-                  return
-                }
+              ref.putData(data!, metadata: metadata) { (metadata, error) in
+//                guard let metadata = metadata else {
+//                    print(error as Any)
+//                  return
+//                }
                 // Metadata contains file metadata such as size, content-type.
-                let size = metadata.size
                 // You can also access to download URL after upload.
                 ref.downloadURL { (url, error) in
                   guard let downloadURL = url else {
