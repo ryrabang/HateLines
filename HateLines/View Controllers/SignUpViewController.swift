@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseStorage
+//import FirebaseDatabase
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -23,6 +25,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageButton: UIButton!
+    
+    let db = Firestore.firestore()
+    let storage = Storage.storage()
+    
+    var image: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,84 +51,76 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
             let fullName = firstName + " " + lastName
             
-            // Create the user
-            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+            
+            //storage Reference
+              let storageRef = storage.reference()
 
-//                imageUrl "George@image.com"
-//                (string)
-//                name "George Bateman"
-//                password "George@password"
-//                verified false
-//
-                if err != nil { // Check for errors
-                    self.showError("Error creating user")
-                    print(err!)
-                } else { // User was created successfully
-                    let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["email":email, "imageUrl":"george@image.com","name":fullName, "password":password, "verified":"false"]) { (error) in
+              // Data in memory (image? is UIImage)
+              let data = image.jpegData(compressionQuality: 0.5)
+
+              //metadata setting
+              let metadata = StorageMetadata()
+              metadata.contentType = "image/jpeg"
+
+              // Create a reference to the file you want to upload
+              let ref = storageRef.child("images/" + "heelli" + ".jpg")
+
+              let userUID = Auth.auth().currentUser?.uid
+              print("userUID: \(userUID)")
+
+              // Upload the file to the path "images/rivers.jpg"
+              let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
+                guard let metadata = metadata else {
+                  print(error)
+                  return
+                }
+                // Metadata contains file metadata such as size, content-type.
+                let size = metadata.size
+                // You can also access to download URL after upload.
+                ref.downloadURL { (url, error) in
+                  guard let downloadURL = url else {
+                    return
+                  }
+                    let imageURL = "\(downloadURL)"
+                    Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+
+                        if err != nil { // Check for errors
+                            self.showError("Error creating user")
+                            print(err!)
+                        } else { // User was created successfully
+                            
+                            let userUID = Auth.auth().currentUser?.uid
                         
-                        if error != nil {
-                            self.showError("Error saving user data")
+                            // Store the rest of the user info
+                            let currentUser = User(ID: userUID!, name: fullName, email: email, password: password, imageUrl: imageURL, verified: false)
+                            
+                            UserModel.addUser(currentUser)
+
+                            self.transitionToHome()
                         }
                     }
-                    
-                    // Transition to home screen
-                    self.transitionToHome()
                 }
-            }
+              }
+            
+            // Create the user
+            
         }
 
     }
     
-    // Checks the fields to see if data is correct.
-    // If everything is correct, method returns nil.
-    // Otherwise, returns the error message
-    func validateFields() -> String? {
-        
-        // Check all fields are filled in
-        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                  
-            return "Please fill in all fields"
-        }
-        
-        // Check if password is secure
-        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        if Utilities.isPasswordValid(cleanedPassword) == false {
-            // Password isn't secure enough
-            return "Please make sure your password is at least 8 characters, contains a special character and a number"
-        }
-        return nil
-    }
     
-    func transitionToHome() {
-        let tabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
+    func storeImage(_ userUid: String, _ currentUser: User) {
         
-        view.window?.rootViewController = tabBarController
-        view.window?.makeKeyAndVisible()
-    }
-    
-    func showError(_ message: String) {
-        errorLabel.text = message
-        errorLabel.alpha = 1
-    }
-    
-    func setUpElements() {
-        // Hide the error label
-        errorLabel.alpha = 0
+        print("CLICKED SIGN UP")
+        print("CLICKED SIGN UP")
+        print("CLICKED SIGN UP")
+        print("CLICKED SIGN UP")
+        print("CLICKED SIGN UP")
+
         
-        // Style the elements
-        Utilities.styleTextField(firstNameTextField)
-        Utilities.styleTextField(lastNameTextField)
-        Utilities.styleTextField(emailTextField)
-        Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(signUpButton)
+        UserModel.addUser(currentUser)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -179,11 +178,110 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
         
         // for some reason .setImage(image, for: .normal) gives a blue rendering of the img,
         imageButton.setBackgroundImage(image, for: .normal)
         
         self.dismiss(animated: true, completion: nil)
+        
+        print("SELECTED PICTURE")
+        print("SELECTED PICTURE")
+        print("SELECTED PICTURE")
+        print("SELECTED PICTURE")
+        print("SELECTED PICTURE")
+        print("SELECTED PICTURE")
+        print("SELECTED PICTURE")
+        print("SELECTED PICTURE")
+        
+//        //storage Reference
+//        let storageRef = storage.reference()
+//
+//        // Data in memory (image? is UIImage)
+//        let data = image?.jpegData(compressionQuality: 0.5)
+//
+//        //metadata setting
+//        let metadata = StorageMetadata()
+//        metadata.contentType = "image/jpeg"
+//
+//        // Create a reference to the file you want to upload
+//        let ref = storageRef.child("images/rivers.jpg")
+//
+//        let userUID = Auth.auth().currentUser?.uid
+//        print("userUID: \(userUID)")
+//
+//        // Upload the file to the path "images/rivers.jpg"
+//        let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
+//          guard let metadata = metadata else {
+//            print(error)
+//            return
+//          }
+//          // Metadata contains file metadata such as size, content-type.
+//          let size = metadata.size
+//          // You can also access to download URL after upload.
+//          ref.downloadURL { (url, error) in
+//            guard let downloadURL = url else {
+//              return
+//            }
+//            self.db.collection("users").addDocument(data:[
+//                "imageURL": "\(downloadURL)"
+//            ]) {
+//                err in
+//                    if let err = err {
+//                        print(err)
+//                    }
+//                }
+//
+//            }
+//        }
+    }
+    
+    // Checks the fields to see if data is correct.
+    // If everything is correct, method returns nil.
+    // Otherwise, returns the error message
+    func validateFields() -> String? {
+        
+        // Check all fields are filled in
+        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+                  
+            return "Please fill in all fields"
+        }
+        
+        // Check if password is secure
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if Utilities.isPasswordValid(cleanedPassword) == false {
+            // Password isn't secure enough
+            return "Please make sure your password is at least 8 characters, contains a special character and a number"
+        }
+        return nil
+    }
+    
+    func transitionToHome() {
+        let tabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
+        
+        view.window?.rootViewController = tabBarController
+        view.window?.makeKeyAndVisible()
+    }
+    
+    func showError(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+    }
+    
+    func setUpElements() {
+        // Hide the error label
+        errorLabel.alpha = 0
+        
+        // Style the elements
+        Utilities.styleTextField(firstNameTextField)
+        Utilities.styleTextField(lastNameTextField)
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(signUpButton)
     }
 }

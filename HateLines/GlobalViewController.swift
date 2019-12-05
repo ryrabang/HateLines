@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class GlobalViewController : UIViewController {
     
@@ -19,6 +20,8 @@ class GlobalViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+
         // Do any additional setup after loading the view.
         commentTableManager = PostsTableManager(connect: commentsTableView,withData: posts)
     }
