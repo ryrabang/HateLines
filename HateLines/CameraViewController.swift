@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class CameraViewController: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UISearchBarDelegate{
 
 
+    @IBOutlet weak var comment: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var imageView: UIImageView!
     
+    let storage = Storage.storage()
+    let db = Firestore.firestore()
     
     var searchTableManager:SearchTableManager?
     var users:[User] = []
+    var image:UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +104,7 @@ UINavigationControllerDelegate, UISearchBarDelegate{
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)!
         imageView.image = image
         self.dismiss(animated: true, completion: nil)
         
@@ -141,4 +147,48 @@ UINavigationControllerDelegate, UISearchBarDelegate{
         //        }
     }
 
+    @IBAction func upload(_ sender: Any) {
+        var user:User = (searchTableManager?.getSelectedUser())!
+        var message = comment.text
+        
+
+        //storage Reference
+        let storageRef = storage.reference()
+
+        // Data in memory
+        let data = image.jpegData(compressionQuality: 0.5)
+
+        //metadata setting
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+
+        // Create a reference to the file you want to upload
+        let ref = storageRef.child("images/test.jpg")
+
+        // Upload the file to the path "images/rivers.jpg"
+        let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
+          guard let metadata = metadata else {
+            print(error)
+            return
+          }
+          // Metadata contains file metadata such as size, content-type.
+          let size = metadata.size
+          // You can also access to download URL after upload.
+          ref.downloadURL { (url, error) in
+            guard let downloadURL = url else {
+              return
+            }
+            self.db.collection("posts").addDocument(data:[
+                "image": "\(downloadURL)"
+            ]) {
+                err in
+                if let err = err {
+                    print(err)
+                }
+            }
+//let post = Post(postRef: postRef, userID: String(userID), againstID: String(againstID), imageUrl: imageUrl, phrase: phrase, likes: likes, createdAt: createdAt!)
+          }
+        }
+    }
+    
 }

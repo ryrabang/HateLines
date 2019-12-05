@@ -12,6 +12,7 @@ import UIKit
 class SearchTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
     
     var users: [User] = []
+    var selectedUser: User!
     
     init(connect tableView:UITableView) {
         super.init()
@@ -56,6 +57,19 @@ class SearchTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource 
         }
         return [reportAction]
     }
-       
+    
+    
+    
+    
 }
 
+//MARK: - functions used for camera view
+extension SearchTableManager {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedUser = users[indexPath.row]
+    }
+    
+    func getSelectedUser()->User {
+        return selectedUser
+    }
+}
