@@ -31,13 +31,13 @@ class PostsTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
     //MARK: - Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("get rows")
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("getting cells")
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostCell
-        
+        postCell.setPost(data: posts[indexPath.row])
         return postCell
     }
     
