@@ -496,7 +496,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="square.and.arrow.up" catalog="system"/>
                                 <connections>
-                                    <action selector="PickImages:" destination="vbu-Sf-a3C" eventType="touchUpInside" id="j3r-aT-ctu"/>
                                     <action selector="upload:" destination="vbu-Sf-a3C" eventType="touchUpInside" id="Kyd-JV-D9p"/>
                                 </connections>
                             </button>
