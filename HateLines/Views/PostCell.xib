@@ -85,6 +85,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="againstImage" destination="nM8-ka-4B8" id="bHL-0m-ylt"/>
+                <outlet property="comment" destination="Rd0-CM-9ka" id="97i-La-8CL"/>
                 <outlet property="downVote" destination="PDY-Tb-tIb" id="ET7-TS-HOp"/>
                 <outlet property="score" destination="wtI-QC-MD3" id="Yhw-JJ-5J2"/>
                 <outlet property="upVote" destination="Iwn-V5-zVL" id="Hzi-C6-Mqq"/>

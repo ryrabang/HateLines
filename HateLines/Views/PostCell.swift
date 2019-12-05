@@ -12,9 +12,20 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var upVote: UIButton!
     @IBOutlet weak var downVote: UIButton!
     @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var againstImage: UIImageView!
+    @IBOutlet weak var comment: UILabel!
     
     var userClicked = false
     var upOrDown = ""
+    var post = Post(dictionary: [
+        "postRef": "0",
+        "userID": "0",
+        "againstID": "0",
+        "imageUrl": "0",
+        "phrase": "0",
+        "createdAt": "0",
+        "likes":"0"
+    ])
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +36,12 @@ class PostCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setPost(data: Post) {
+        comment.text = data.phrase
+        score.text = String(data.likes)
+        post = data
     }
     
     // Changes the post's score depending on whether the user clicks the up or down arrow.
