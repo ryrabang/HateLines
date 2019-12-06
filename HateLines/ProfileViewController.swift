@@ -23,9 +23,29 @@ class ProfileViewController: UIViewController{
         
         // inject table datasource, and delegate
         // working code
-        hateTableManager = PostsTableManager(connect:hateFeedTableView, withData: posts)
         
-        yourHateTableManager = PostsTableManager(connect: yourHateTableView, withData: posts)
+        let userID = Utilities.getCurrentUserID()
+        
+        if (userID != nil)  {
+            PostModel.getPost(userID: userID, sortBy:"likes") {
+                [weak self](posts, error) in
+                if (error != nil) {
+                    print(error as Any)
+                }
+                self?.hateTableManager = PostsTableManager(connect: self!.hateFeedTableView, withData: posts)
+            }
+            
+            PostModel.getPost(againstID: userID, sortBy:"likes") {
+                [weak self](posts, error) in
+                if (error != nil) {
+                    print(error as Any)
+                }
+                self?.yourHateTableManager = PostsTableManager(connect: self!.yourHateTableView, withData: posts)
+            }
+        } else {
+            hateTableManager = PostsTableManager(connect: hateFeedTableView, withData: posts)
+            yourHateTableManager = PostsTableManager(connect: yourHateTableView, withData: posts)
+        }
         
         
         
