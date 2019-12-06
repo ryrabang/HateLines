@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController{
                 if (error != nil) {
                     print(error as Any)
                 }
-                self?.hateTableManager = PostsTableManager(connect: self!.hateFeedTableView, withData: posts)
+                self?.yourHateTableManager = PostsTableManager(connect: self!.yourHateTableView, withData: posts)
             }
             
             PostModel.getPost(againstID: userID, sortBy:"likes") {
@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController{
                 if (error != nil) {
                     print(error as Any)
                 }
-                self?.yourHateTableManager = PostsTableManager(connect: self!.yourHateTableView, withData: posts)
+                self?.hateTableManager = PostsTableManager(connect: self!.hateFeedTableView, withData: posts)
             }
         } else {
             hateTableManager = PostsTableManager(connect: hateFeedTableView, withData: posts)
