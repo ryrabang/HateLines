@@ -29,7 +29,8 @@ class CommnetsViewController: UIViewController {
         
         commentsTableView.dataSource = self
         commentsTableView.delegate = self
-        
+        postImageView.makeRounded()
+        commentsTableView.rowHeight = 80
         refresh()
         
     }

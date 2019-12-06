@@ -16,6 +16,8 @@ class CommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        print("initializing cell")
+        userImage.makeRounded()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,7 +27,7 @@ class CommentCell: UITableViewCell {
     }
 
     func setComment(as comment:Comment){
-        
+    
         UserModel.getUser(withID: comment.userID) {
             (users, error) in
             

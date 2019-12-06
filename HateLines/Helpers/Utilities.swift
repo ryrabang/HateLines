@@ -80,3 +80,11 @@ class Utilities {
     }
     
 }
+
+
+extension UIImageView {
+    func makeRounded() {
+        self.layer.cornerRadius = self.frame.height / 2
+        self.clipsToBounds = true
+    }
+}
