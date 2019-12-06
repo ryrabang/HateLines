@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController{
     
+    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var hateFeedTableView: UITableView!
     @IBOutlet weak var yourHateTableView: UITableView!
     
@@ -23,10 +24,23 @@ class ProfileViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         // inject table datasource, and delegate
         // working code
         
         let userID = Utilities.getCurrentUserID()
+        
+        UserModel.getUser(withID: userID) { (user, error) in
+            Utilities.downloadImage(from: user[0].imageUrl) {
+                (image, err) in
+                DispatchQueue.main.async {
+                    self.profilePic.image = image
+                }
+            }
+        }
+        
+        
         
         if (userID != nil)  {
             PostModel.getPost(userID: userID, sortBy:"likes") {
