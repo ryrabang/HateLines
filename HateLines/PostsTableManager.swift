@@ -41,22 +41,34 @@ class PostsTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    init(connect tableView:UITableView) {
+        super.init()
+        tableView.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 70
+    }
+    
     init(withData data: [Post]){
         
         posts = data
         
     }
     
+    func updateUsers(data: [Post]) {
+           self.posts = data
+    }
+    
     //MARK: - Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("get rows")
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("getting cells")
         let postCell = tableView.dequeueReusableCell(withIdentifier: "postCell") as! PostCell
-        
+        postCell.setPost(data: posts[indexPath.row])
         return postCell
     }
     

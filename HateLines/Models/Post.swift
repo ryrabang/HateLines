@@ -66,7 +66,7 @@ class PostModel {
         }
         
         if let sortBy = sortBy, !sortBy.isEmpty {
-            filtered = filtered.order(by: sortBy)
+            filtered = filtered.order(by: sortBy, descending: true )
         }
         
         return filtered

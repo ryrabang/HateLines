@@ -55,29 +55,29 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             
             //storage Reference
-            let storageRef = storage.reference()
-            
-            // Data in memory (image? is UIImage)
-            let data = image.jpegData(compressionQuality: 0.5)
-            
-            //metadata setting
-            let metadata = StorageMetadata()
-            metadata.contentType = "image/jpeg"
-            
-            // Create a reference to the file you want to upload
-            let ref = storageRef.child("images/" + "heelliiii" + ".jpg")
-            
-            let userUID = Auth.auth().currentUser?.uid
-            print("userUID: \(userUID)")
-            
-            // Upload the file to the path "images/rivers.jpg"
-            let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
-                guard let metadata = metadata else {
-                    print(error)
-                    return
-                }
+
+              let storageRef = storage.reference()
+
+              // Data in memory (image? is UIImage)
+              let data = image.jpegData(compressionQuality: 0.5)
+
+              //metadata setting
+              let metadata = StorageMetadata()
+              metadata.contentType = "image/jpeg"
+
+              // Create a reference to the file you want to upload
+              let ref = storageRef.child("images/" + "heelli" + ".jpg")
+
+              let userUID = Auth.auth().currentUser?.uid
+            print("userUID: \(String(describing: userUID))")
+
+              // Upload the file to the path "images/rivers.jpg"
+              ref.putData(data!, metadata: metadata) { (metadata, error) in
+//                guard let metadata = metadata else {
+//                    print(error as Any)
+//                  return
+//                }
                 // Metadata contains file metadata such as size, content-type.
-                let size = metadata.size
                 // You can also access to download URL after upload.
                 ref.downloadURL { (url, error) in
                     guard let downloadURL = url else {

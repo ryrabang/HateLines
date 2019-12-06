@@ -15,15 +15,22 @@ class GlobalViewController : UIViewController {
     @IBOutlet weak var commentsTableView: UITableView!
     
     var commentTableManager:PostsTableManager?
-    let posts:[Post] = []
+    var posts:[Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        PostModel.getPost(sortBy:"likes") {
+            [weak self](posts, error) in
+            if (error != nil) {
+                print(error as Any)
+            }
+            self?.posts = posts
+            self?.commentTableManager = PostsTableManager(connect: self!.commentsTableView,withData: posts)
+        }
 
         // Do any additional setup after loading the view.
-        commentTableManager = PostsTableManager(connect: commentsTableView,withData: posts)
+        
     }
     
 }
