@@ -38,7 +38,7 @@ class GlobalViewController : UIViewController {
                 if (error != nil) {
                     print(error as Any)
                 }
-                self?.globalHatedLabel.text = "Number 1 loved user: " + user[0].name
+                self?.globalHatedLabel.text = "Number 1 hated user: " + user[0].name
                 print(user[0].name)
                 print(user[0].imageUrl)
                 Utilities.downloadImage(from: user[0].imageUrl) {
