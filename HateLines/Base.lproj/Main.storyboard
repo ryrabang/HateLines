@@ -249,7 +249,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aC5-Jb-RGI">
-                                <rect key="frame" x="320" y="714" width="64" height="64"/>
+                                <rect key="frame" x="256" y="650" width="128" height="128"/>
                                 <state key="normal" backgroundImage="back-button64"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="zPw-HA-zDw" eventType="touchUpInside" id="NJS-es-U8R"/>
@@ -313,8 +313,8 @@
                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="person.crop.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-l9-m3C">
-                                <rect key="frame" x="40" y="149" width="175" height="223.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="avatar-profile" translatesAutoresizingMaskIntoConstraints="NO" id="FeY-l9-m3C">
+                                <rect key="frame" x="40" y="148" width="175" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" id="zZq-Z2-DJN" userLabel="Top Comment Stack">
                                 <rect key="frame" x="14" y="394" width="380" height="324"/>
@@ -347,7 +347,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KVc-bI-xmV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="globe" catalog="system" id="I9H-F2-eks"/>
+                    <tabBarItem key="tabBarItem" title="" image="globesmaller" id="I9H-F2-eks"/>
                     <navigationItem key="navigationItem" id="lEf-g3-XuD"/>
                     <connections>
                         <outlet property="commentsTableView" destination="iPY-Bq-k8c" id="hF2-VO-GKG"/>
@@ -491,7 +491,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GQa-tI-QRf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" id="cjA-UM-hi3"/>
+                    <tabBarItem key="tabBarItem" title="" image="profileSmall" id="cjA-UM-hi3"/>
                     <connections>
                         <outlet property="hateFeedTableView" destination="V1a-1O-uo4" id="Xob-Vu-jml"/>
                         <outlet property="profilePic" destination="k77-gW-9rE" id="mxU-ZI-Bq7"/>
@@ -514,7 +514,7 @@
                                 <rect key="frame" x="102" y="707" width="83" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" backgroundImage="folder.badge.plus" catalog="system">
+                                <state key="normal" backgroundImage="camera">
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -543,7 +543,7 @@
                                 <rect key="frame" x="219" y="706" width="83" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" backgroundImage="square.and.pencil" catalog="system"/>
+                                <state key="normal" backgroundImage="upload"/>
                                 <connections>
                                     <action selector="upload:" destination="vbu-Sf-a3C" eventType="touchUpInside" id="Kyd-JV-D9p"/>
                                 </connections>
@@ -738,7 +738,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JzC-Yb-zhu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="qIA-4k-tMl"/>
+                    <tabBarItem key="tabBarItem" title="" image="searchSmall" id="qIA-4k-tMl"/>
                     <connections>
                         <outlet property="searchBar" destination="Ekk-OA-7Qc" id="0FY-ja-LNK"/>
                         <outlet property="searchTableView" destination="1st-TD-Npc" id="VCZ-Fl-WMg"/>
@@ -771,14 +771,13 @@
         <image name="avatar-profile" width="225" height="225"/>
         <image name="back-button100" width="100" height="100"/>
         <image name="back-button64" width="64" height="64"/>
+        <image name="camera" width="512" height="512"/>
         <image name="camera" catalog="system" width="64" height="48"/>
-        <image name="folder.badge.plus" catalog="system" width="64" height="42"/>
-        <image name="globe" catalog="system" width="64" height="60"/>
+        <image name="globesmaller" width="30" height="30"/>
         <image name="logout50" width="50" height="50"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-        <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
-        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+        <image name="profileSmall" width="30" height="30"/>
+        <image name="searchSmall" width="30" height="30"/>
+        <image name="upload" width="200" height="200"/>
         <image name="upload-img100" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
