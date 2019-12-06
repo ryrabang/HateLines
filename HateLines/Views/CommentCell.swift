@@ -9,7 +9,7 @@
 import UIKit
 
 class CommentCell: UITableViewCell {
-
+    
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     
@@ -18,16 +18,18 @@ class CommentCell: UITableViewCell {
         // Initialization code
         print("initializing cell")
         userImage.makeRounded()
+      
     }
-
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
-    func setComment(as comment:Comment){
     
+    func setComment(as comment:Comment){
+        
         UserModel.getUser(withID: comment.userID) {
             (users, error) in
             
@@ -44,10 +46,12 @@ class CommentCell: UITableViewCell {
                     self?.userImage.image = image
                     self?.commentLabel.text = comment.phrase
                 }
-            
+                
             }
         }
-
+        print("width: \(userImage.frame.width)")
+        print("height: \(userImage.frame.height)")
+        
     }
-
+    
 }

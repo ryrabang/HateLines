@@ -33,6 +33,7 @@ class ProfileViewController: UIViewController{
                     print(error as Any)
                 }
                 self?.yourHateTableManager = PostsTableManager(connect: self!.yourHateTableView, withData: posts)
+                self?.yourHateTableView.reloadData()
             }
             
             PostModel.getPost(againstID: userID, sortBy:"likes") {
@@ -41,6 +42,7 @@ class ProfileViewController: UIViewController{
                     print(error as Any)
                 }
                 self?.hateTableManager = PostsTableManager(connect: self!.hateFeedTableView, withData: posts)
+                self?.hateFeedTableView.reloadData()
             }
         } else {
             hateTableManager = PostsTableManager(connect: hateFeedTableView, withData: posts)
@@ -66,6 +68,32 @@ class ProfileViewController: UIViewController{
         //        yourHateTableView.rowHeight = 70
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("profile page is going to show")
+        
+        if let userID = Utilities.getCurrentUserID() {
+            PostModel.getPost(userID: userID, sortBy:"likes") {
+                [weak self](posts, error) in
+                if (error != nil) {
+                    print(error as Any)
+                }
+                self?.yourHateTableManager?.updateUsers(data: posts)
+                self?.yourHateTableView.reloadData()
+            }
+            
+            PostModel.getPost(againstID: userID, sortBy:"likes") {
+                [weak self](posts, error) in
+                if (error != nil) {
+                    print(error as Any)
+                }
+                self?.hateTableManager?.updateUsers(data: posts)
+                self?.hateFeedTableView.reloadData()
+            }
+        }
+        
+    }
+    
     @IBAction func logoutButtonPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -80,8 +108,8 @@ class ProfileViewController: UIViewController{
     func transitionToHomePage() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
         
-//        self.view.window?.rootViewController = viewController
-//        self.view.window?.makeKeyAndVisible()
+        //        self.view.window?.rootViewController = viewController
+        //        self.view.window?.makeKeyAndVisible()
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
 }

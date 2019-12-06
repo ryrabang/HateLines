@@ -29,8 +29,8 @@ class CommnetsViewController: UIViewController {
         
         commentsTableView.dataSource = self
         commentsTableView.delegate = self
-        postImageView.makeRounded()
         commentsTableView.rowHeight = 80
+        postImageView.makeRounded()
         refresh()
         
     }
@@ -64,8 +64,11 @@ class CommnetsViewController: UIViewController {
         if let userId = Utilities.getCurrentUserID() {
             let comment = Comment(postRef: post.postRef, userID: userId, phrase: commentPhrase, likes: 0, createdAt: Date())
             CommmentModel.addComment(comment)
+            self.comments.append(comment)
+            self.commentsTableView.reloadData()
         }
         
+        commentPhraseTextField.text = ""
     }
     
     
