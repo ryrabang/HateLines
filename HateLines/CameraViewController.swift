@@ -26,7 +26,7 @@ UINavigationControllerDelegate, UISearchBarDelegate{
     
     var searchTableManager:SearchTableManager?
     var users:[User] = []
-    var image:UIImage!
+    var image:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,61 +117,85 @@ UINavigationControllerDelegate, UISearchBarDelegate{
     }
 
     @IBAction func upload(_ sender: Any) {
-        print("passing")
-        let user:User = (searchTableManager?.getSelectedUser())!
-        let message = comment.text
         
+            if ( searchTableManager?.getSelectedUser() == nil) {
+                let alert = UIAlertController(title: "No user selected!", message: "Please select a user!", preferredStyle: .alert)
 
-        //storage Reference
-        let storageRef = storage.reference()
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
 
-        // Data in memory
-        let data = image.jpegData(compressionQuality: 0.5)
+                self.present(alert, animated: true)
+            } else if (comment.text == ""){
+                let alert = UIAlertController(title: "No comment entered!", message: "Please input a comment!", preferredStyle: .alert)
 
-        //metadata setting
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
 
-        // reference Id
-        let collection = self.db.collection("posts")
-        let postRef = collection.document()
-        
-        // get the post id for image name
-        let fileName = postRef.documentID
-        // Create a reference to the file you want to upload
-        let ref = storageRef.child("images/\(fileName).jpg")
+                self.present(alert, animated: true)
+            } else if (image == nil) {
+                let alert = UIAlertController(title: "No image selected!", message: "Please input an image!", preferredStyle: .alert)
 
-        // Upload the file to the path "images/rivers.jpg"
-        ref.putData(data!, metadata: metadata) { (metadata, error) in
-            guard metadata != nil else {
-            print(error as Any)
-            return
-          }
-          // Metadata contains file metadata such as size, content-type.
-          // You can also access to download URL after upload.
-          ref.downloadURL { (url, error) in
-            guard let downloadURL = url else {
-              return
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+            } else {
+                let user = searchTableManager?.getSelectedUser()
+                let message = comment.text
+                    
+
+                //storage Reference
+                let storageRef = storage.reference()
+
+                // Data in memory
+                let data = image!.jpegData(compressionQuality: 0.5)
+
+                //metadata setting
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpeg"
+
+                // reference Id
+                let collection = self.db.collection("posts")
+                let postRef = collection.document()
+                    
+                // get the post id for image name
+                let fileName = postRef.documentID
+                // Create a reference to the file you want to upload
+                let ref = storageRef.child("images/\(fileName).jpg")
+
+                // Upload the file to the path "images/rivers.jpg"
+                ref.putData(data!, metadata: metadata) { (metadata, error) in
+                    guard metadata != nil else {
+                        print(error as Any)
+                        return
+                    }
+                    // Metadata contains file metadata such as size, content-type.
+                    // You can also access to download URL after upload.
+                    ref.downloadURL { (url, error) in
+                        guard let downloadURL = url else {
+                          return
+                        }
+                        
+                        
+                        let currentId = Auth.auth().currentUser?.uid
+                        let againstID = user!.ID
+                        let imageUrl = "\(downloadURL)"
+                        let phrase = message
+                        let createdAt = self.generateRandomDate(daysBack: Int(arc4random_uniform(UInt32(200))))
+                        
+                        
+                        print("postId: \(postRef.documentID)")
+                        
+                        let post = Post(postRef: postRef, userID: currentId!, againstID: againstID, imageUrl: imageUrl, phrase: phrase!, likes: 0, createdAt: createdAt!)
+                      
+                        PostModel.addPost(to: postRef, post: post)
+                        }
+                    }
+                    
+                    
+                    self.tabBarController!.selectedIndex = 0;
+                
             }
-            
-            
-            let currentId = Auth.auth().currentUser?.uid
-            let againstID = user.ID
-            let imageUrl = "\(downloadURL)"
-            let phrase = message
-            let createdAt = self.generateRandomDate(daysBack: Int(arc4random_uniform(UInt32(200))))
-            
-            
-            print("postId: \(postRef.documentID)")
-            
-            let post = Post(postRef: postRef, userID: currentId!, againstID: againstID, imageUrl: imageUrl, phrase: phrase!, likes: 0, createdAt: createdAt!)
-          
-            PostModel.addPost(to: postRef, post: post)
-        }
-        }
         
+            
         
-        self.tabBarController!.selectedIndex = 0;
 
     }
     

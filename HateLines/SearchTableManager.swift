@@ -69,7 +69,7 @@ extension SearchTableManager {
         selectedUser = users[indexPath.row]
     }
     
-    func getSelectedUser()->User {
+    func getSelectedUser()->User? {
         return selectedUser
     }
 }
