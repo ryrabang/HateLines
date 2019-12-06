@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var hateFeedTableView: UITableView!
     @IBOutlet weak var yourHateTableView: UITableView!
     
+    var window: UIWindow?
+    
     let posts:[Post] = []
     var hateTableManager:PostsTableManager?
     var yourHateTableManager:PostsTableManager?
@@ -106,10 +108,21 @@ class ProfileViewController: UIViewController{
     }
     
     func transitionToHomePage() {
-        let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
-        
-        //        self.view.window?.rootViewController = viewController
-        //        self.view.window?.makeKeyAndVisible()
-        self.navigationController?.pushViewController(viewController!, animated: true)
+
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "LandingVC")
+
+
+        guard
+                let window = UIApplication.shared.keyWindow,
+                let rootViewController = window.rootViewController
+                else {
+            return
+        }
+
+
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = viewController
+        })
+
     }
 }

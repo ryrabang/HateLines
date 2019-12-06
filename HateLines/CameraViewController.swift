@@ -185,7 +185,10 @@ UINavigationControllerDelegate, UISearchBarDelegate{
                     }
                     
                     
-                    self.tabBarController!.selectedIndex = 0;
+                    let tabBarController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
+                    
+                    self.view.window?.rootViewController = tabBarController
+                    self.view.window?.makeKeyAndVisible()
                 
             }
         
