@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class Utilities {
     
@@ -49,6 +50,17 @@ class Utilities {
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
+    }
+    
+    /**
+                return the current user id, if it's available, nil if not available
+     */
+    static func getCurrentUserID () -> String? {
+        if let id = Auth.auth().currentUser?.uid {
+            return id
+        }else {
+            return nil
+        }
     }
     
 }
