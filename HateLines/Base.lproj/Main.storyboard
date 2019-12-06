@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -249,7 +249,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aC5-Jb-RGI">
-                                <rect key="frame" x="256" y="650" width="128" height="128"/>
+                                <rect key="frame" x="320" y="714" width="64" height="64"/>
                                 <state key="normal" backgroundImage="back-button64"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="zPw-HA-zDw" eventType="touchUpInside" id="NJS-es-U8R"/>
@@ -307,8 +307,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number 1 Hated in /@location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoI-Ko-KLO">
-                                <rect key="frame" x="40" y="57" width="334" height="71"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number 1 Hated in /@location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoI-Ko-KLO">
+                                <rect key="frame" x="40" y="104" width="334" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -317,7 +317,7 @@
                                 <rect key="frame" x="40" y="148" width="175" height="226"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" id="zZq-Z2-DJN" userLabel="Top Comment Stack">
-                                <rect key="frame" x="14" y="394" width="380" height="324"/>
+                                <rect key="frame" x="14" y="394" width="380" height="410"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qu5-qW-jdc">
@@ -327,7 +327,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iPY-Bq-k8c" userLabel="Comment Table">
-                                        <rect key="frame" x="0.0" y="35.5" width="380" height="288.5"/>
+                                        <rect key="frame" x="0.0" y="35.5" width="380" height="374.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
                                 </subviews>
@@ -340,7 +340,6 @@
                             <constraint firstItem="zZq-Z2-DJN" firstAttribute="top" secondItem="FeY-l9-m3C" secondAttribute="bottom" constant="20" id="eYo-7x-ag5"/>
                             <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="FeY-l9-m3C" secondAttribute="trailing" constant="199" id="iRA-wW-Dpr"/>
                             <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="VoI-Ko-KLO" secondAttribute="trailing" constant="40" id="kNl-tR-2VW"/>
-                            <constraint firstItem="KVc-bI-xmV" firstAttribute="trailing" secondItem="zZq-Z2-DJN" secondAttribute="trailing" constant="20" id="l4n-FV-3dE"/>
                             <constraint firstItem="VoI-Ko-KLO" firstAttribute="leading" secondItem="KVc-bI-xmV" secondAttribute="leading" constant="40" id="mWP-YV-2bh"/>
                             <constraint firstItem="FeY-l9-m3C" firstAttribute="leading" secondItem="VoI-Ko-KLO" secondAttribute="leading" id="qkP-l1-xdd"/>
                             <constraint firstItem="zZq-Z2-DJN" firstAttribute="leading" secondItem="KVc-bI-xmV" secondAttribute="leading" constant="14" id="w5X-Ki-JjP"/>
@@ -367,36 +366,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar-profile" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-hE-xt9">
-                                <rect key="frame" x="0.0" y="44" width="414" height="192.33333333333334"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hate Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7R-uZ-bkl" userLabel="Hate Feed Label">
-                                <rect key="frame" x="0.0" y="229" width="414" height="25.333333333333332"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZNn-b2-SsF" userLabel="Hate Feed Table">
-                                <rect key="frame" x="0.0" y="262" width="414" height="231.00000000000003"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="723-bN-WMn" userLabel="Your Hate Table">
-                                <rect key="frame" x="0.0" y="544" width="414" height="291"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Hate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdA-3r-cMj">
-                                <rect key="frame" x="0.0" y="515" width="414" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="peO-SJ-qjI" userLabel="Main Stack">
+                                <rect key="frame" x="0.0" y="20" width="200" height="788"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-profile" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-hE-xt9">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="5Qh-dI-qIi"/>
+                                            <constraint firstAttribute="height" constant="200" id="kRi-T5-vZb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Lc2-zK-MfM" userLabel="Hate Feed Stack">
+                                        <rect key="frame" x="0.0" y="200" width="200" height="262.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hate Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l7R-uZ-bkl" userLabel="Hate Feed Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="25.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZNn-b2-SsF" userLabel="Hate Feed Table">
+                                                <rect key="frame" x="0.0" y="30.5" width="200" height="232"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BCk-hB-7w0" userLabel="Your Hate Stack">
+                                        <rect key="frame" x="0.0" y="462.5" width="200" height="325.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Hate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XdA-3r-cMj">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="26.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="723-bN-WMn" userLabel="Your Hate Table">
+                                                <rect key="frame" x="0.0" y="31.5" width="200" height="294"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dQa-hE-xt9" firstAttribute="centerX" secondItem="peO-SJ-qjI" secondAttribute="centerX" id="qAk-nd-zR0"/>
+                                    <constraint firstItem="Lc2-zK-MfM" firstAttribute="height" secondItem="peO-SJ-qjI" secondAttribute="height" multiplier="1:3" id="zza-a1-reF"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="m9t-Dx-q8D" firstAttribute="bottom" secondItem="peO-SJ-qjI" secondAttribute="bottom" id="40X-Ld-PpT"/>
+                            <constraint firstItem="peO-SJ-qjI" firstAttribute="top" secondItem="m9t-Dx-q8D" secondAttribute="top" constant="20" id="87H-kt-Ait"/>
+                            <constraint firstItem="peO-SJ-qjI" firstAttribute="leading" secondItem="m9t-Dx-q8D" secondAttribute="leading" id="EIT-WJ-sSu"/>
+                            <constraint firstAttribute="trailing" secondItem="peO-SJ-qjI" secondAttribute="trailing" id="gL0-h7-mPu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m9t-Dx-q8D"/>
                     </view>
                     <navigationItem key="navigationItem" id="yam-I3-8l6"/>
@@ -433,13 +458,13 @@
                                         <rect key="frame" x="0.0" y="202.5" width="414" height="256"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hate Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bug-9O-Ql3" userLabel="Hate Feed Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="25.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V1a-1O-uo4" userLabel="Hate Feed Table">
-                                                <rect key="frame" x="0.0" y="25" width="414" height="231"/>
+                                                <rect key="frame" x="0.0" y="25.5" width="414" height="230.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </tableView>
                                         </subviews>
@@ -448,13 +473,13 @@
                                         <rect key="frame" x="0.0" y="468.5" width="414" height="300.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Hate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-jc-PXF">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="9.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwd-d2-AIY" userLabel="Your Hate Table">
-                                                <rect key="frame" x="0.0" y="9.5" width="414" height="291"/>
+                                                <rect key="frame" x="0.0" y="26.5" width="414" height="274"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </tableView>
                                         </subviews>
@@ -559,7 +584,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tGY-x6-v99"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="camera" catalog="system" id="7Ae-3W-xr9"/>
+                    <tabBarItem key="tabBarItem" title="" image="camerasmall" id="7Ae-3W-xr9"/>
                     <navigationItem key="navigationItem" id="ZKY-al-ao2"/>
                     <connections>
                         <outlet property="ImageView" destination="yWG-c9-djt" id="s5h-et-Kdp"/>
@@ -772,7 +797,7 @@
         <image name="back-button100" width="100" height="100"/>
         <image name="back-button64" width="64" height="64"/>
         <image name="camera" width="512" height="512"/>
-        <image name="camera" catalog="system" width="64" height="48"/>
+        <image name="camerasmall" width="30" height="30"/>
         <image name="globesmaller" width="30" height="30"/>
         <image name="logout50" width="50" height="50"/>
         <image name="profileSmall" width="30" height="30"/>
