@@ -44,11 +44,6 @@ UINavigationControllerDelegate, UISearchBarDelegate{
         // Do any additional setup after loading the view.
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchString = searchBar.text!
         
