@@ -80,7 +80,8 @@ class ProfileViewController: UIViewController{
     func transitionToHomePage() {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
         
-        self.view.window?.rootViewController = viewController
-        self.view.window?.makeKeyAndVisible()
+//        self.view.window?.rootViewController = viewController
+//        self.view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(viewController!, animated: true)
     }
 }

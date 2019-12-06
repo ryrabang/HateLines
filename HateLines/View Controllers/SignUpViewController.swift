@@ -31,6 +31,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var image: UIImage!
     
+    var imageSet: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,6 +93,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                             // Create the user in Firebase
                             UserModel.addUser(currentUser)
                             
+                            print("userUID: " + String(Auth.auth().currentUser!.uid))
                             self.transitionToHome()
                         }
                     }
@@ -109,8 +112,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func backButtonPressed(_ sender: Any) {
         let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
         
-        self.view.window?.rootViewController = viewController
-        self.view.window?.makeKeyAndVisible()
+//        self.view.window?.rootViewController = viewController
+//        self.view.window?.makeKeyAndVisible()
+        
+
+        self.navigationController?.pushViewController(viewController!, animated: true)
     }
     
     // MARK: Camera Functions
@@ -167,6 +173,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         // for some reason .setImage(image, for: .normal) gives a blue rendering of the img,
         imageButton.setBackgroundImage(image, for: .normal)
         
+        // Switch flag on since this point means image was selected
+        imageSet = true
+        
         self.dismiss(animated: true, completion: nil)
         
     }
@@ -185,6 +194,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             return "Please fill in all fields"
         }
         
+        if imageSet == false {
+            return "Please select an image"
+        }
+        
         // Check if password is secure
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -199,6 +212,14 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         let tabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
         
         self.navigationController?.pushViewController(tabBarController!, animated: true)
+        
+//                let viewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.landingViewController)
+//                
+//                self.view.window?.rootViewController = viewController
+//                self.view.window?.makeKeyAndVisible()
+                
+
+//                self.navigationController?.pushViewController(viewController!, animated: true)
     }
     
     func showError(_ message: String) {
