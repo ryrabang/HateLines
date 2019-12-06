@@ -89,9 +89,10 @@ class PostsTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected row: \(indexPath.row)")
+
         print("navigator: \(String(describing: navigator))")
         print("commentVC: \(String(describing: commentsVC))")
+        commentsVC.post = posts[indexPath.row]
         navigator.present(commentsVC, animated: true, completion: nil)
     }
 }

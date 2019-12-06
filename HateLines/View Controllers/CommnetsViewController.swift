@@ -9,11 +9,51 @@
 import UIKit
 
 class CommnetsViewController: UIViewController {
-
+    
+    var post:Post!
+    var comments:[Comment] = []
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var postPhraseLabel: UILabel!
+    
+    @IBOutlet weak var commentPhraseTextField: UITextField!
+    
+    @IBOutlet weak var commentsTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("post: \(String(describing: post))")
+        CommmentModel.getComments(withPostRef: post.postRef) {
+            [weak self](comments, error) in
+            if error != nil {
+                print("get comments error: \(String(describing: error))")
+            }
+            
+            self?.comments = comments
+            self?.commentsTableView.reloadData()
+        }
+        
+        commentsTableView.dataSource = self
+        commentsTableView.delegate = self
+        
+        Utilities.downloadImage(from: post.imageUrl) {
+            (image, error) in
+            DispatchQueue.main.async {
+                self.postImageView.image = image
+                self.postPhraseLabel.text = self.post.phrase
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func commentTapped(_ sender: UIButton) {
+        let commentPhrase = commentPhraseTextField.text
+        
+        
+        
     }
     
 
@@ -26,5 +66,25 @@ class CommnetsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+}
+
+
+extension CommnetsViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentCell
+        
+        let comment = comments[indexPath.row]
+        
+        cell.setComment(as: comment)
+        
+        
+        return cell
+    }
+
 
 }

@@ -20,6 +20,7 @@
 		25C7ED8C237529AB0032F94B /* PostsTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7ED8B237529AB0032F94B /* PostsTableManager.swift */; };
 		25C7ED8E23752A090032F94B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C7ED8D23752A090032F94B /* Post.swift */; };
 		25E6BE912389D82C004DD157 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25E6BE902389D82C004DD157 /* GoogleService-Info.plist */; };
+		2C5C9513239A006000DC2E9B /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C9512239A006000DC2E9B /* CommentCell.swift */; };
 		762048422350515F0027C949 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048412350515F0027C949 /* CameraViewController.swift */; };
 		BE16B10923983AC600A82858 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE16B10823983AC600A82858 /* SearchCell.swift */; };
 		BE16B10B23983AE400A82858 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE16B10A23983AE400A82858 /* SearchCell.xib */; };
@@ -54,6 +55,7 @@
 		25C7ED8B237529AB0032F94B /* PostsTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableManager.swift; sourceTree = "<group>"; };
 		25C7ED8D23752A090032F94B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		25E6BE902389D82C004DD157 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C5C9512239A006000DC2E9B /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		41526349EC42370824665847 /* Pods_HateLines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HateLines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADA1CDBC22E64F6D48E0BF /* Pods-HateLines.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HateLines.debug.xcconfig"; path = "Target Support Files/Pods-HateLines/Pods-HateLines.debug.xcconfig"; sourceTree = "<group>"; };
 		762048412350515F0027C949 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				25C7ED8823751FCF0032F94B /* PostCell.xib */,
 				BE16B10A23983AE400A82858 /* SearchCell.xib */,
 				BE16B10823983AC600A82858 /* SearchCell.swift */,
+				2C5C9512239A006000DC2E9B /* CommentCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				FA08A4F32394D2840051EA0B /* HomeViewController.swift in Sources */,
 				762048422350515F0027C949 /* CameraViewController.swift in Sources */,
 				25C7ED8E23752A090032F94B /* Post.swift in Sources */,
+				2C5C9513239A006000DC2E9B /* CommentCell.swift in Sources */,
 				25BDC6452390753E00F177CF /* GlobalViewController.swift in Sources */,
 				BE16B10D23983E1200A82858 /* SearchTableManager.swift in Sources */,
 				25C7ED8C237529AB0032F94B /* PostsTableManager.swift in Sources */,

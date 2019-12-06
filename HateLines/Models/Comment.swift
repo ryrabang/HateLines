@@ -68,7 +68,7 @@ class CommmentModel {
         return filtered
     }
     
-    static func getComments(withPostRef postRef: DocumentReference?, userID:String?, likes: Int?, sortBy: String?, completion: @escaping([Comment], Error?) -> Void) {
+    static func getComments(withPostRef postRef: DocumentReference? = nil, userID:String? = nil, likes: Int? = nil, sortBy: String? = nil, completion: @escaping([Comment], Error?) -> Void) {
         let filteredQuery = query(withPostRef:postRef, userID:userID, likes: likes, sortBy:sortBy)
         
         filteredQuery.getDocuments { (snapshot, error) in

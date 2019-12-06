@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
 
 class Utilities {
     
@@ -61,6 +62,21 @@ class Utilities {
         }else {
             return nil
         }
+    }
+    
+    static func downloadImage(from url:String, completion: @escaping(UIImage, Error?) -> Void){
+          guard let imageURL = URL(string: url) else { return }
+
+            // just not to cause a deadlock in UI!
+          DispatchQueue.global().async {
+              guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            if let image = UIImage(data: imageData) {
+                completion(image, nil)
+            }else {
+                print("download image error")
+            }
+          }
     }
     
 }
