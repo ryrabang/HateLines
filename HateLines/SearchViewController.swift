@@ -47,6 +47,18 @@ class SearchViewController:UIViewController, UISearchBarDelegate {
         searchTableView.reloadData()
     }
     
+    @IBAction func lookup(_ sender: Any) {
+        self.performSegue(withIdentifier: "searchToProfile", sender: self)
+              
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "searchToProfile"){
+            let userInfo = searchTableManager?.getSelectedUser()
+            let profileVC = segue.destination as! OtherProfileViewController
+            profileVC.user = userInfo
+        }
+    }
     
     
 }
