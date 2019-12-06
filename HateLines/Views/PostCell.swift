@@ -84,8 +84,9 @@ class PostCell: UITableViewCell {
                 }
             }
         }
-        
+        post!.likes = currentScore
         score.text = String(currentScore)
+        PostModel.upvote(of: post!)
     }
     
 }
