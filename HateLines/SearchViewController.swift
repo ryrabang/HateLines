@@ -54,9 +54,20 @@ class SearchViewController:UIViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "searchToProfile"){
-            let userInfo = searchTableManager?.getSelectedUser()
-            let profileVC = segue.destination as! OtherProfileViewController
-            profileVC.user = userInfo
+            
+            if (searchTableManager?.getSelectedUser() == nil) {
+                let alert = UIAlertController(title: "No user selected!", message: "Please select a user!", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+            } else {
+                let userInfo = searchTableManager?.getSelectedUser()
+                let profileVC = segue.destination as! OtherProfileViewController
+                profileVC.user = userInfo
+            }
+            
+            
         }
     }
     
