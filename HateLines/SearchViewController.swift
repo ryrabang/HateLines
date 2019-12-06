@@ -24,7 +24,7 @@ class SearchViewController:UIViewController, UISearchBarDelegate {
         UserModel.getUser {
             [weak self](users, error) in
             if (error != nil) {
-                print("error\(error)")
+                print(error as Any)
             }
             self?.users = users
         }
