@@ -93,6 +93,7 @@ class PostsTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
         print("navigator: \(String(describing: navigator))")
         print("commentVC: \(String(describing: commentsVC))")
         commentsVC.post = posts[indexPath.row]
+        commentsVC.refresh()
         navigator.present(commentsVC, animated: true, completion: nil)
     }
 }

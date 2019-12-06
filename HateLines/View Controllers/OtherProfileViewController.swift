@@ -10,23 +10,47 @@ import UIKit
 
 class OtherProfileViewController: UIViewController {
 
+    @IBOutlet weak var hateFeedTableView: UITableView!
+    @IBOutlet weak var yourHateTableView: UITableView!
     @IBOutlet weak var profilePic: UIImageView!
     var user:User?
+    
+    let posts:[Post] = []
+    var hateTableManager:PostsTableManager?
+    var yourHateTableManager:PostsTableManager?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let imageURL = URL(string: user!.imageUrl) else { return }
 
-        // just not to cause a deadlock in UI!
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-
-            let image = UIImage(data: imageData)
-
+        Utilities.downloadImage(from: user!.imageUrl) {
+            (image, err) in
             DispatchQueue.main.async {
                 self.profilePic.image = image
             }
+        }
+        
+        let userID = user?.ID
+
+        if (userID != nil)  {
+            PostModel.getPost(userID: userID, sortBy:"likes") {
+                [weak self](posts, error) in
+                if (error != nil) {
+                    print(error as Any)
+                }
+                self?.hateTableManager = PostsTableManager(connect: self!.hateFeedTableView, withData: posts)
+            }
+            
+            PostModel.getPost(againstID: userID, sortBy:"likes") {
+                [weak self](posts, error) in
+                if (error != nil) {
+                    print(error as Any)
+                }
+                self?.yourHateTableManager = PostsTableManager(connect: self!.yourHateTableView, withData: posts)
+            }
+        } else {
+            hateTableManager = PostsTableManager(connect: hateFeedTableView, withData: posts)
+            yourHateTableManager = PostsTableManager(connect: yourHateTableView, withData: posts)
         }
     }
     
