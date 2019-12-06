@@ -23,7 +23,7 @@ class GlobalViewController : UIViewController {
         PostModel.getPost(sortBy:"likes") {
             [weak self](posts, error) in
             if (error != nil) {
-                print("error\(error)")
+                print(error as Any)
             }
             self?.posts = posts
             self?.commentTableManager = PostsTableManager(connect: self!.commentsTableView,withData: posts)

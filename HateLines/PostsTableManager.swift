@@ -22,10 +22,22 @@ class PostsTableManager: NSObject,  UITableViewDelegate, UITableViewDataSource {
         tableView.rowHeight = 70
     }
     
+    init(connect tableView:UITableView) {
+        super.init()
+        tableView.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "postCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 70
+    }
+    
     init(withData data: [Post]){
        
         posts = data
        
+    }
+    
+    func updateUsers(data: [Post]) {
+           self.posts = data
     }
     
     //MARK: - Data Source
