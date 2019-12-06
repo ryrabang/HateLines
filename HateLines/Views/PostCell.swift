@@ -42,6 +42,21 @@ class PostCell: UITableViewCell {
         comment.text = data.phrase
         score.text = String(data.likes)
         post = data
+        
+        func setImage(from url: String) {
+            guard let imageURL = URL(string: data.imageUrl) else { return }
+
+            // just not to cause a deadlock in UI!
+            DispatchQueue.global().async {
+                guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+                let image = UIImage(data: imageData)
+
+                DispatchQueue.main.async {
+                    self.againstImage.image = image
+                }
+            }
+        }
     }
     
     // Changes the post's score depending on whether the user clicks the up or down arrow.
