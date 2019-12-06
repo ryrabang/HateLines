@@ -50,8 +50,10 @@ extension Post : DocumentSerializable {
 }
 
 class PostModel {
-    private static func query(userID:String?, againstID:String?, sortBy:String?) -> Query {
-        let baseQuery = Firestore.firestore().collection("posts").limit(to: Int(INT_MAX))
+    private static func query(userID:String?, againstID:String?, limits:Int?, sortBy:String?) -> Query {
+        let numberOfposts = limits == nil ? Int(INT_MAX) : limits
+        
+        let baseQuery = Firestore.firestore().collection("posts").limit(to: numberOfposts!)
         
         var filtered = baseQuery
         
@@ -70,8 +72,8 @@ class PostModel {
         return filtered
     }
     
-    static func getPost(userID:String? = nil, againstID:String? = nil, sortBy:String? = nil, completion: @escaping([Post], Error?) -> Void) {
-           let filteredQuery = query(userID:userID, againstID:againstID, sortBy:sortBy)
+    static func getPost(userID:String? = nil, againstID:String? = nil, sortBy:String? = nil, limits:Int? = nil, completion: @escaping([Post], Error?) -> Void) {
+        let filteredQuery = query(userID:userID, againstID:againstID, limits:limits, sortBy:sortBy)
            
            filteredQuery.getDocuments { (snapshot, error) in
                guard let snapshot = snapshot else {

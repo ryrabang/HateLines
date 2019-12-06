@@ -15,5 +15,6 @@ struct Constants {
         static let loginViewController = "LoginVC"
         static let signUpViewController = "SignUpVC"
         static let tabBarController = "TabBarC"
+        static let commentViewController = "CommentVC"
     }
 }

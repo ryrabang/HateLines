@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25081DDB2399B073000C17FD /* CommnetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25081DDA2399B073000C17FD /* CommnetsViewController.swift */; };
 		25BDC6452390753E00F177CF /* GlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC6442390753E00F177CF /* GlobalViewController.swift */; };
 		25BDC647239075AD00F177CF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC646239075AD00F177CF /* SearchViewController.swift */; };
 		25BDC64923909CE300F177CF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BDC64823909CE300F177CF /* User.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		1EB2D9039A31E63916DEB0C7 /* Pods-HateLines.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HateLines.release.xcconfig"; path = "Target Support Files/Pods-HateLines/Pods-HateLines.release.xcconfig"; sourceTree = "<group>"; };
+		25081DDA2399B073000C17FD /* CommnetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommnetsViewController.swift; sourceTree = "<group>"; };
 		25BDC6442390753E00F177CF /* GlobalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewController.swift; sourceTree = "<group>"; };
 		25BDC646239075AD00F177CF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		25BDC64823909CE300F177CF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				FA08A4F42394D29A0051EA0B /* LoginViewController.swift */,
 				FA08A4F22394D2840051EA0B /* HomeViewController.swift */,
 				BE703576233EB7A70020EC40 /* ViewController.swift */,
+				25081DDA2399B073000C17FD /* CommnetsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				25BDC647239075AD00F177CF /* SearchViewController.swift in Sources */,
 				BE16B10923983AC600A82858 /* SearchCell.swift in Sources */,
+				25081DDB2399B073000C17FD /* CommnetsViewController.swift in Sources */,
 				FA08A4FC2394F65A0051EA0B /* Constants.swift in Sources */,
 				BE703577233EB7A70020EC40 /* ViewController.swift in Sources */,
 				25BDC64F2390AEA600F177CF /* SeedData.swift in Sources */,

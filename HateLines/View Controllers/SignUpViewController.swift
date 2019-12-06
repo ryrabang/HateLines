@@ -13,7 +13,7 @@ import FirebaseStorage
 //import FirebaseDatabase
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpElements()
     }
     
@@ -55,59 +55,60 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             
             //storage Reference
-              let storageRef = storage.reference()
-
-              // Data in memory (image? is UIImage)
-              let data = image.jpegData(compressionQuality: 0.5)
-
-              //metadata setting
-              let metadata = StorageMetadata()
-              metadata.contentType = "image/jpeg"
-
-              // Create a reference to the file you want to upload
-              let ref = storageRef.child("images/" + "heelli" + ".jpg")
-
-              let userUID = Auth.auth().currentUser?.uid
-              print("userUID: \(userUID)")
-
-              // Upload the file to the path "images/rivers.jpg"
-              let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
+            let storageRef = storage.reference()
+            
+            // Data in memory (image? is UIImage)
+            let data = image.jpegData(compressionQuality: 0.5)
+            
+            //metadata setting
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            // Create a reference to the file you want to upload
+            let ref = storageRef.child("images/" + "heelliiii" + ".jpg")
+            
+            let userUID = Auth.auth().currentUser?.uid
+            print("userUID: \(userUID)")
+            
+            // Upload the file to the path "images/rivers.jpg"
+            let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
                 guard let metadata = metadata else {
-                  print(error)
-                  return
+                    print(error)
+                    return
                 }
                 // Metadata contains file metadata such as size, content-type.
                 let size = metadata.size
                 // You can also access to download URL after upload.
                 ref.downloadURL { (url, error) in
-                  guard let downloadURL = url else {
-                    return
-                  }
+                    guard let downloadURL = url else {
+                        
+                        return
+                    }
                     let imageURL = "\(downloadURL)"
                     Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
-
+                        
                         if err != nil { // Check for errors
                             self.showError("Error creating user")
                             print(err!)
                         } else { // User was created successfully
                             
                             let userUID = Auth.auth().currentUser?.uid
-                        
+                            
                             // Store the rest of the user info
                             let currentUser = User(ID: userUID!, name: fullName, email: email, password: password, imageUrl: imageURL, verified: false)
                             
                             UserModel.addUser(currentUser)
-
+                            
                             self.transitionToHome()
                         }
                     }
                 }
-              }
+            }
             
             // Create the user
             
         }
-
+        
     }
     
     
@@ -118,7 +119,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         print("CLICKED SIGN UP")
         print("CLICKED SIGN UP")
         print("CLICKED SIGN UP")
-
+        
         
         UserModel.addUser(currentUser)
     }
@@ -132,21 +133,21 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     // MARK: Camera Functions
     @IBAction func PickImages(_ sender: UIButton) {
-
+        
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.CameraOn()
         }))
-
+        
         alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
             self.GalleryOn()
         }))
-
+        
         alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-
+        
         /*If you want work actionsheet on ipad
-        then you have to use popoverPresentationController to present the actionsheet,
-        otherwise app will crash on iPad */
+         then you have to use popoverPresentationController to present the actionsheet,
+         otherwise app will crash on iPad */
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
             alert.popoverPresentationController?.sourceView = sender
@@ -155,7 +156,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         default:
             break
         }
-
+        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -186,55 +187,6 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         self.dismiss(animated: true, completion: nil)
         
-        print("SELECTED PICTURE")
-        print("SELECTED PICTURE")
-        print("SELECTED PICTURE")
-        print("SELECTED PICTURE")
-        print("SELECTED PICTURE")
-        print("SELECTED PICTURE")
-        print("SELECTED PICTURE")
-        print("SELECTED PICTURE")
-        
-//        //storage Reference
-//        let storageRef = storage.reference()
-//
-//        // Data in memory (image? is UIImage)
-//        let data = image?.jpegData(compressionQuality: 0.5)
-//
-//        //metadata setting
-//        let metadata = StorageMetadata()
-//        metadata.contentType = "image/jpeg"
-//
-//        // Create a reference to the file you want to upload
-//        let ref = storageRef.child("images/rivers.jpg")
-//
-//        let userUID = Auth.auth().currentUser?.uid
-//        print("userUID: \(userUID)")
-//
-//        // Upload the file to the path "images/rivers.jpg"
-//        let uploadTask = ref.putData(data!, metadata: metadata) { (metadata, error) in
-//          guard let metadata = metadata else {
-//            print(error)
-//            return
-//          }
-//          // Metadata contains file metadata such as size, content-type.
-//          let size = metadata.size
-//          // You can also access to download URL after upload.
-//          ref.downloadURL { (url, error) in
-//            guard let downloadURL = url else {
-//              return
-//            }
-//            self.db.collection("users").addDocument(data:[
-//                "imageURL": "\(downloadURL)"
-//            ]) {
-//                err in
-//                    if let err = err {
-//                        print(err)
-//                    }
-//                }
-//
-//            }
-//        }
     }
     
     // Checks the fields to see if data is correct.
@@ -247,7 +199,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                  
+            
             return "Please fill in all fields"
         }
         
@@ -262,10 +214,13 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func transitionToHome() {
+        //        let tabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
+        //
+        //        view.window?.rootViewController = tabBarController
+        //        view.window?.makeKeyAndVisible()
         let tabBarController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.tabBarController)
         
-        view.window?.rootViewController = tabBarController
-        view.window?.makeKeyAndVisible()
+        self.navigationController?.pushViewController(tabBarController!, animated: true)
     }
     
     func showError(_ message: String) {
